@@ -24,10 +24,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 60'%3E%3Cg fill='none' stroke='%2337462B' stroke-width='3'%3E%3Cpath d='M20 58 V8'/%3E%3Cpath d='M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z'/%3E%3Cpath d='M20 34c8 0 12-6 12-12-8 0-12 6-12 12z'/%3E%3C/g%3E%3Ccircle cx='20' cy='6' r='4' fill='%23EDBEE4'/%3E%3C/svg%3E">
 
 <style>
 :root{
   --paper:#F6F1E7;        /* warm cream ground */
+  --haze:#EFE7EE;         /* soft lilac wash, alternating ground */
   --cream:#F3D0C3;        /* sweet cream block */
   --ink:#33402A;          /* deep leaf, text */
   --forest:#37462B;       /* palm leaf */
@@ -79,7 +81,7 @@ body::after{
   color:var(--terra-deep);
 }
 
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.01em;font-variation-settings:"opsz" 144}
 .it{font-style:italic}
 
 /* ===================== NAV ===================== */
@@ -117,13 +119,20 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   border-radius:280px 280px 24px 24px;
   overflow:hidden;
   height:min(64vh,560px);
+  width:100%;
+  object-fit:cover;
   background:
     radial-gradient(120% 90% at 30% 20%, #c8d3b4 0%, transparent 55%),
-    radial-gradient(120% 120% at 80% 90%, var(--sage) 0%, transparent 60%),
-    linear-gradient(160deg,#9fb083,#7d915f 60%,var(--olive));
+    radial-gradient(120% 120% at 80% 90%, var(--lilac) 0%, transparent 60%),
+    linear-gradient(160deg,#9fb083,#7d915f 60%,var(--forest));
   display:flex;align-items:center;justify-content:center;
 }
-.heroframe .ph-label{color:rgba(255,255,255,.85)}
+/* scrim keeps the name and labels legible over any photo */
+.heroframe::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(0,0,0,.12) 0%, transparent 30%, transparent 55%, rgba(45,55,35,.45) 100%);
+}
+.heroframe .ph-label{color:rgba(255,255,255,.9);position:relative;z-index:2}
 .heronames{
   position:relative;
   margin-top:-78px;
@@ -172,7 +181,7 @@ section{padding:96px 0}
 .lede{max-width:620px;font-size:1.08rem;color:var(--ink);opacity:.85;margin-bottom:48px}
 
 /* ===================== THE BRAID ===================== */
-.braid{background:var(--cream);position:relative}
+.braid{background:var(--haze);position:relative}
 .braid .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
 .braid h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--forest);margin-bottom:24px}
 .braid h2 .it{color:var(--terra-deep)}
@@ -193,11 +202,17 @@ section{padding:96px 0}
 /* ===================== WORK ===================== */
 .worklist{display:grid;gap:0;border-top:1px solid rgba(55,70,43,.2)}
 .workrow{
+  position:relative;
   display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:start;
   padding:30px 8px;border-bottom:1px solid rgba(55,70,43,.2);
-  text-decoration:none;color:inherit;transition:background .3s,padding-left .3s;
+  text-decoration:none;color:inherit;transition:background .35s,padding-left .35s;
 }
-.workrow:hover{background:rgba(234,120,91,.08);padding-left:18px}
+.workrow::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:4px;height:0;background:var(--lilac);border-radius:4px;transition:height .35s ease;
+}
+.workrow:hover{background:rgba(237,190,228,.16);padding-left:22px}
+.workrow:hover::before{height:72%}
 .worknum{font-family:var(--display);font-size:1.1rem;color:var(--terra-deep);padding-top:6px}
 .workrow h3{font-size:1.7rem;color:var(--forest);margin-bottom:8px;line-height:1.1}
 .workrow p{font-size:.98rem;opacity:.82;max-width:60ch}
@@ -224,7 +239,7 @@ section{padding:96px 0}
   font-weight:700;padding:5px 12px;border-radius:30px;margin-bottom:18px;
 }
 .nt.policy{background:var(--terra);color:var(--grape)}
-.nt.garden{background:var(--bluebell);color:var(--grape)}
+.nt.garden{background:#C6D2AE;color:var(--forest)}
 .nt.tarot{background:var(--lilac);color:var(--grape)}
 .note h3{font-size:1.5rem;color:var(--paper);margin-bottom:12px;line-height:1.1}
 .note p{font-size:.94rem;opacity:.78}
@@ -235,31 +250,36 @@ section{padding:96px 0}
 .gphoto{
   aspect-ratio:4/5;display:flex;align-items:flex-end;
   padding:20px;color:var(--paper);position:relative;overflow:hidden;
-  border-radius:120px 18px 120px 18px;
+  border-radius:16px;object-fit:cover;width:100%;
+  transition:transform .4s ease;
 }
-.gphoto:nth-child(2){border-radius:18px 120px 18px 120px;aspect-ratio:1}
-.gphoto:nth-child(3){border-radius:18px 120px 120px 18px}
-.gphoto:nth-child(4){border-radius:120px 18px 18px 120px}
-.gphoto:nth-child(5){border-radius:18px 18px 120px 120px;aspect-ratio:1}
-.gphoto:nth-child(6){border-radius:120px 120px 18px 18px}
-.gphoto .cap{font-family:var(--display);font-style:italic;font-size:1.25rem;z-index:2;text-shadow:0 1px 12px rgba(0,0,0,.35)}
-.g1{background:linear-gradient(160deg,#c9a86a,var(--olive))}
-.g2{background:linear-gradient(160deg,var(--bluebell),#5d6b7d)}
+.gphoto::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top, rgba(45,55,35,.5), transparent 55%)}
+.gphoto:hover{transform:scale(1.015)}
+.gphoto .cap{font-family:var(--display);font-style:italic;font-size:1.25rem;z-index:2;position:relative;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.g1{background:linear-gradient(160deg,#9fb083,var(--forest))}
+.g2{background:linear-gradient(160deg,var(--lilac),var(--plum))}
 .g3{background:linear-gradient(160deg,#d98c72,var(--terra-deep))}
-.g4{background:linear-gradient(160deg,#9fb083,var(--forest))}
-.g5{background:linear-gradient(160deg,var(--lilac),var(--plum))}
-.g6{background:linear-gradient(160deg,#e0b48f,var(--sage))}
+.g4{background:linear-gradient(160deg,#c9d2ae,var(--olive))}
+.g5{background:linear-gradient(160deg,#e7c6df,var(--plum))}
+.g6{background:linear-gradient(160deg,#e0b48f,var(--terra-deep))}
 @media(max-width:760px){.gallery{grid-template-columns:1fr 1fr}}
 
 /* ===================== WRITING ===================== */
-.writing{background:var(--cream)}
+.writing{background:var(--haze)}
 .writelist{display:grid;gap:20px}
 .writerow{
+  position:relative;
   display:flex;justify-content:space-between;align-items:baseline;gap:24px;
-  padding:24px 4px;border-bottom:1px solid rgba(55,70,43,.18);
-  text-decoration:none;color:inherit;transition:transform .3s;
+  padding:24px 4px 24px 0;border-bottom:1px solid rgba(55,70,43,.18);
+  text-decoration:none;color:inherit;transition:transform .35s,padding-left .35s;
 }
-.writerow:hover{transform:translateX(8px)}
+.writerow::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:4px;height:0;background:var(--lilac);border-radius:4px;transition:height .35s ease;
+}
+.writerow:hover{transform:none;padding-left:18px}
+.writerow:hover::before{height:64%}
 .writerow h3{font-size:1.5rem;color:var(--forest)}
 .writerow p{font-size:.95rem;opacity:.78;margin-top:6px;max-width:54ch}
 .writerow .meta{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep);font-weight:600;white-space:nowrap}
@@ -291,6 +311,29 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 .heronames{animation-delay:.15s}.herosub{animation-delay:.35s}
 @keyframes rise{to{opacity:1;transform:none}from{transform:translateY(20px)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}}
+
+/* ===================== TRACK RECORD ===================== */
+.track-rec{background:var(--paper);color:var(--forest);border-top:2px solid var(--forest)}
+.track-rec .kicker{color:var(--terra-deep)}
+.track-rec h2{color:var(--forest)}
+.timeline{border-top:1px solid rgba(55,70,43,.3);margin-top:8px}
+.trow{
+  display:grid;grid-template-columns:1fr 2fr auto;gap:24px;align-items:baseline;
+  padding:22px 4px;border-bottom:1px solid rgba(55,70,43,.3);
+}
+.trow .role{font-family:var(--display);font-size:1.25rem;color:var(--forest);line-height:1.15}
+.trow .org{font-size:.82rem;color:var(--grape);opacity:.9;margin-top:4px;font-weight:600}
+.trow .desc{font-size:.96rem;opacity:.85}
+.trow .yr{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--grape);white-space:nowrap;text-align:right}
+.creds{margin-top:30px;font-size:.95rem;line-height:1.7;opacity:.9}
+.creds strong{font-weight:600}
+.cvbtn{
+  display:inline-block;margin-top:26px;background:var(--forest);color:var(--paper);
+  text-decoration:none;padding:13px 28px;border-radius:40px;font-weight:600;font-size:.92rem;
+  transition:background .3s,transform .3s;
+}
+.cvbtn:hover{background:var(--grape);transform:translateY(-2px)}
+@media(max-width:700px){.trow{grid-template-columns:1fr}.trow .yr{text-align:left}}
 </style>
 </head>
 <body>
@@ -299,10 +342,11 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
   <div class="wrap">
     <span class="brand">Delany Broome<span class="dot">.</span></span>
     <div class="navlinks">
+      <a href="about.html">About</a>
       <a href="#work">Work</a>
       <a href="#notes">Field Notes</a>
       <a href="#photos">Photographs</a>
-      <a href="#writing">Writing</a>
+      <a href="cv.html">CV</a>
       <a class="say" href="#hello">Say hello</a>
     </div>
   </div>
@@ -311,7 +355,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== HERO ===================== -->
 <header class="hero">
   <div class="wrap">
-    <span class="kicker">Senior Environmental Scientist &nbsp;&middot;&nbsp; Bay Area &nbsp;&middot;&nbsp; Central Valley roots</span>
+    <span class="kicker">Climate Scientist &nbsp;&middot;&nbsp; Disaster Preparedness &nbsp;&middot;&nbsp; Bay Area</span>
     <!-- HERO PHOTO: replace this div with <img class="heroframe" src="..."> -->
     <div class="heroframe" role="img" aria-label="hero photograph placeholder">
       <span class="ph-label">your photograph here</span>
@@ -320,8 +364,8 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
       <h1>Delany Broome</h1>
     </div>
     <div class="herosub">
-      <span class="line">I plan for oil spills and I grow tomatoes.</span>
-      <p>Climate work asks a lot. It can still hold room for joy. This site keeps the policy and the garden in one place, on purpose.</p>
+      <span class="line">Climate scientist working on how California prepares for disaster.</span>
+      <p>Water chemistry, pollution response, and the data systems behind environmental decisions. A planter of gardens and a believer in tomorrow.</p>
       <svg class="sprig" viewBox="0 0 40 60" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
         <path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/>
         <path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4"/>
@@ -333,14 +377,16 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== MARQUEE ===================== -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>rooted in the central valley</span><span class="star">&#10047;</span>
-    <span>grown in the bay</span><span class="star">&#10047;</span>
-    <span>serious about climate</span><span class="star">&#10047;</span>
-    <span>serious about joy</span><span class="star">&#10047;</span>
-    <span>rooted in the central valley</span><span class="star">&#10047;</span>
-    <span>grown in the bay</span><span class="star">&#10047;</span>
-    <span>serious about climate</span><span class="star">&#10047;</span>
-    <span>serious about joy</span><span class="star">&#10047;</span>
+    <span>water chemistry</span><span class="star">&#10047;</span>
+    <span>pollution response</span><span class="star">&#10047;</span>
+    <span>climate data</span><span class="star">&#10047;</span>
+    <span>environmental justice</span><span class="star">&#10047;</span>
+    <span>and a garden</span><span class="star">&#10047;</span>
+    <span>water chemistry</span><span class="star">&#10047;</span>
+    <span>pollution response</span><span class="star">&#10047;</span>
+    <span>climate data</span><span class="star">&#10047;</span>
+    <span>environmental justice</span><span class="star">&#10047;</span>
+    <span>and a garden</span><span class="star">&#10047;</span>
   </div>
 </div>
 
@@ -348,8 +394,9 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <section class="braid">
   <div class="wrap inner">
     <div class="reveal">
-      <h2>Two drawers, <span class="it">one pair of hands</span></h2>
-      <p>Most people file the lab coat in one drawer and the garden gloves in another. I stopped doing that. The same attention that reads a weathering curve reads a tomato leaf. Rigor and joy are not a trade. They feed each other, and the work comes out better for it.</p>
+      <h2>The throughline</h2>
+      <p>Chemistry, then water data, then statewide spill response, now climate. The constant is making environmental risk legible: assembling the record, testing the assumptions, and showing the part that usually stays out of view.</p>
+      <p style="margin-top:18px"><a href="about.html" style="color:var(--terra-deep);font-weight:600;text-decoration:none">More about me &rarr;</a></p>
     </div>
     <div class="reveal">
       <!-- FEATURE PHOTO: replace with <img class="flowerimg" src="..."> -->
@@ -366,56 +413,88 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
     <div class="sechead reveal"><span class="kicker">Selected</span><h2>Work</h2></div>
     <p class="lede reveal">Plans, models, and tools for the parts of climate work that decide who gets protected and who pays.</p>
     <div class="worklist">
-      <a class="workrow reveal" href="#">
+      <a class="workrow reveal" href="https://wildlife.ca.gov/OSPR/Contingency" target="_blank" rel="noopener">
         <span class="worknum">01</span>
         <div><h3>2026 State Oil Spill Contingency Plan</h3>
-          <p>Lead author. Coordinated 110 plus federal, state, tribal, and industry partners into one plan California can actually act on.</p></div>
+          <p>Lead author. Coordinated 110 plus federal, state, tribal, and industry partners into one plan California can act on, integrating renewable fuels, lithium-ion, and offshore wind preparedness.<br><span class="arrow">See it at OSPR &rarr;</span></p></div>
         <span class="worktag">OSPR &middot; 2026</span>
       </a>
-      <a class="workrow reveal" href="#">
+      <a class="workrow reveal" href="https://delanybee.github.io/methanecasestudy/" target="_blank" rel="noopener">
         <span class="worknum">02</span>
         <div><h3>Market mechanisms for methane-reducing livestock tech</h3>
-          <p>Capstone at UC Berkeley, with Spark Climate Solutions. A stress test that found the mechanism failed before the math did, then pointed somewhere better.<br><span class="arrow">View the project &rarr;</span></p></div>
+          <p>Capstone at UC Berkeley, with Spark Climate Solutions. A stress test that found the mechanism failed before the math did, then pointed somewhere better.<br><span class="arrow">Open the project &rarr;</span></p></div>
         <span class="worktag">Capstone &middot; 2026</span>
       </a>
-      <a class="workrow reveal" href="#">
+      <a class="workrow reveal" href="https://delanybee.github.io/howtohideaoilempire/" target="_blank" rel="noopener">
         <span class="worknum">03</span>
-        <div><h3>Spark Market Mechanism Navigator</h3>
-          <p>A funder-facing decision tool covering 15 plus mechanism types, tied to Spark's enteric methane roadmap.<br><span class="arrow">Open the tool &rarr;</span></p></div>
-        <span class="worktag">Build &middot; Tool</span>
-      </a>
-      <a class="workrow reveal" href="#">
-        <span class="worknum">04</span>
-        <div><h3>How to hide an oil empire</h3>
-          <p>An independent study reading California's oil infrastructure as a land tenure system, with a counterintuitive move at its center.<br><span class="arrow">Read it &rarr;</span></p></div>
-        <span class="worktag">Essay &middot; Research</span>
+        <div><h3>California Oil Infrastructure Interactive Map</h3>
+          <p>The companion to the land-empire study. Pipelines, wells, refineries, and platforms that the public record documents but no single agency presents whole.<br><span class="arrow">Open the map &rarr;</span></p></div>
+        <span class="worktag">Build &middot; Map</span>
       </a>
     </div>
   </div>
 </section>
 
 <!-- ===================== FIELD NOTES ===================== -->
-<section id="notes" class="notes">
+<section id="notes" class="writing">
   <div class="wrap">
-    <div class="sechead reveal"><span class="kicker">From the journal</span><h2>Field Notes</h2></div>
-    <p class="lede reveal">Short entries. Some policy, some dirt, some cards. They belong on the same page.</p>
-    <div class="notegrid">
-      <div class="note reveal">
-        <span class="nt policy">Policy</span>
-        <h3>The vaccine no farmer asked for</h3>
-        <p>Why a methane-reducing livestock vaccine creates no value for the farmer or the animal, and what that does to the market built on top of it.</p>
+    <div class="sechead reveal"><span class="kicker">Writing, in print and online</span><h2>Field Notes</h2></div>
+    <p class="lede reveal">Essays and shorter pieces on climate, oil, and the systems that respond to disaster.</p>
+    <div class="writelist">
+      <a class="writerow reveal" href="manufacturing-disaster.html">
+        <div><h3>Manufacturing Disaster</h3>
+          <p>The political ecology of organized catastrophe. How three federal disaster programs were dismantled in 2025, and what that engineers for the next Gulf storm.</p></div>
+        <span class="meta">Working paper</span>
+      </a>
+      <a class="writerow reveal" href="hides-an-empire.html">
+        <div><h3>How the Oil Industry Hides an Empire</h3>
+          <p>California's oil infrastructure read as a land-owning business, with the interactive map that assembles it whole.</p></div>
+        <span class="meta">Essay &middot; Interactive map</span>
+      </a>
+      <a class="writerow reveal" href="inheritance-problem.html">
+        <div><h3>The Inheritance Problem</h3>
+          <p>Cold War waste, California's nuclear legacy, and why contingency stopped being a backup plan and became the plan.</p></div>
+        <span class="meta">Independent study</span>
+      </a>
+      <a class="writerow reveal" href="https://substack.com/@delanybroome" target="_blank" rel="noopener">
+        <div><h3>On Substack</h3>
+          <p>Looser pieces, and the version of an essay I usually write for myself first.</p></div>
+        <span class="meta">Newsletter</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRACK RECORD ===================== -->
+<section class="track-rec">
+  <div class="wrap">
+    <div class="sechead reveal"><span class="kicker">The professional half</span><h2>Track record</h2></div>
+    <p class="lede reveal" style="color:var(--forest);opacity:.85">Eight years inside California's environmental agencies, from the lab bench to statewide coordination.</p>
+    <div class="timeline">
+      <div class="trow reveal">
+        <div><div class="role">ACP Coordinator, Marine Oil Spill Response Planning</div><div class="org">Office of Spill Prevention and Response</div></div>
+        <div class="desc">Lead author of the 2026 State Oil Spill Contingency Plan. California's Area Committee Chair Representative to U.S. EPA Region IX, with oversight of six Coastal Area Contingency Plans under the Clean Water Act and OPA 90.</div>
+        <div class="yr">2024 to 2025</div>
       </div>
-      <div class="note reveal">
-        <span class="nt garden">Garden</span>
-        <h3>What the raised bed is telling me</h3>
-        <p>Notes from the spring beds, and why I trust a plant's stress signals more than most dashboards I have built.</p>
+      <div class="trow reveal">
+        <div><div class="role">Statewide Chemistry Data Manager</div><div class="org">State Water Resources Control Board</div></div>
+        <div class="desc">Ran chemistry, field, and time-series data for California's surface water monitoring program. Built Python, SQL, and Tableau tools for the CEDEN backend that cut processing time by 30 percent.</div>
+        <div class="yr">2019 to 2024</div>
       </div>
-      <div class="note reveal">
-        <span class="nt tarot">Tarot</span>
-        <h3>The card before the summit</h3>
-        <p>What I pulled the morning of the BERC Energy Summit, and why ritual earns its place inside serious work.</p>
+      <div class="trow reveal">
+        <div><div class="role">Scientific Aid</div><div class="org">Central Valley Water Board</div></div>
+        <div class="desc">Deployed for post-fire water quality response after the 2018 Camp Fire. Recognized as Employee of the Month for response work.</div>
+        <div class="yr">2017 to 2019</div>
+      </div>
+      <div class="trow reveal">
+        <div><div class="role">Lab Assistant Technician</div><div class="org">Salt River Project Environmental Quality Lab</div></div>
+        <div class="desc">Water, soil, and hazardous materials analysis for Arizona's primary public utility, by EPA standard methods.</div>
+        <div class="yr">2013 to 2016</div>
       </div>
     </div>
+    <p class="creds reveal"><strong>Education.</strong> M.S. Climate Change Solutions, UC Berkeley (2026). Professional Certificate, Data Analytics, UC Davis (2023). B.S. Chemistry, Arizona State University, The Honors College (2015).<br>
+    <strong>Certifications.</strong> NIMS ICS 100 to 800. SEMS. 48-Hour HAZWOPER. EROS.</p>
+    <a class="cvbtn reveal" href="cv.html">Read the full CV &rarr;</a>
   </div>
 </section>
 
@@ -435,41 +514,17 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
   </div>
 </section>
 
-<!-- ===================== WRITING ===================== -->
-<section id="writing" class="writing">
-  <div class="wrap">
-    <div class="sechead reveal"><span class="kicker">In print and online</span><h2>Writing</h2></div>
-    <p class="lede reveal">Longer thinking, when a paragraph will not hold it.</p>
-    <div class="writelist">
-      <a class="writerow reveal" href="#">
-        <div><h3>How to Win the Talent War</h3>
-          <p>On Nordic institutional design and belonging as competitive strategy.</p></div>
-        <span class="meta">CMR Insights &middot; Forthcoming</span>
-      </a>
-      <a class="writerow reveal" href="#">
-        <div><h3>How to hide an oil empire</h3>
-          <p>Long form, on land, oil, and who quietly holds the title.</p></div>
-        <span class="meta">Essay</span>
-      </a>
-      <a class="writerow reveal" href="#">
-        <div><h3>On Substack</h3>
-          <p>Looser pieces, including the version of the talent essay I wrote for myself first.</p></div>
-        <span class="meta">Newsletter</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== FOOTER ===================== -->
 <footer id="hello">
   <div class="wrap">
     <span class="kicker">Say hello</span>
     <h2>Let's talk.</h2>
-    <p>Delany Broome. Environmental scientist, gardener, cook, and occasional reader of cards. Open to board and commission service, research, and good conversation over coffee.</p>
+    <p>I am finishing a Master of Climate Solutions at UC Berkeley and looking toward climate disaster management, board and commission service, and doctoral work. Always glad to talk shop, or trade notes on what is coming up in the garden.</p>
     <div class="foot-contact">
-      <a href="mailto:you@example.com">Email</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Substack</a>
+      <a href="mailto:delany_broome@berkeley.edu">Email</a>
+      <a href="https://www.linkedin.com/in/delany-broome/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/@delanybroome" target="_blank" rel="noopener">Substack</a>
+      <a href="cv.html">CV</a>
     </div>
     <div class="footbar">
       <span>&copy; 2026 Delany Broome</span>

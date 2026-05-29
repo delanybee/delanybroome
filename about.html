@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About &middot; Delany Broome</title>
+
+<!-- About page. Matches the site design system. Portrait slot is image-ready:
+     replace the .portrait div with <img class="portrait" src="..."> when ready.
+     No dashes anywhere, per house style. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 60'%3E%3Cg fill='none' stroke='%2337462B' stroke-width='3'%3E%3Cpath d='M20 58 V8'/%3E%3Cpath d='M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z'/%3E%3Cpath d='M20 34c8 0 12-6 12-12-8 0-12 6-12 12z'/%3E%3C/g%3E%3Ccircle cx='20' cy='6' r='4' fill='%23EDBEE4'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  --paper:#F6F1E7;--haze:#EFE7EE;--cream:#F3D0C3;--ink:#33402A;--forest:#37462B;--olive:#5F5420;
+  --sage:#AEA181;--terra:#EA785B;--terra-deep:#A84F3D;--lilac:#EDBEE4;--plum:#5A384B;--grape:#3F0013;
+  --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;--maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+a{color:var(--terra-deep)}
+h1,h2{font-family:var(--display);font-weight:400;font-variation-settings:"opsz" 144;line-height:1.05;color:var(--forest)}
+.kicker{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,70,43,.12)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--display);font-size:1.25rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.brand .dot{color:var(--terra)}
+.back{font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink)}.back:hover{color:var(--terra-deep)}
+
+/* hero */
+.ahead{padding:66px 0 30px}
+.ahead .kicker{display:block;margin-bottom:16px}
+.ahead h1{font-size:clamp(2.8rem,8vw,5rem);letter-spacing:-.02em}
+.ahead .tag{font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,3vw,1.7rem);color:var(--plum);margin-top:14px}
+
+/* layout */
+.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;padding:30px 0 80px;align-items:start}
+@media(max-width:820px){.grid{grid-template-columns:1fr;gap:40px}}
+
+.bio p{font-size:1.1rem;margin-bottom:20px;max-width:60ch}
+.bio p:first-of-type::first-letter{font-family:var(--display);float:left;font-size:3.6rem;line-height:.8;padding:8px 10px 0 0;color:var(--terra-deep);font-weight:500}
+.bio h2{font-size:1.5rem;margin:38px 0 14px}
+
+/* portrait + facts rail */
+.rail{position:sticky;top:90px}
+.portrait{width:100%;aspect-ratio:4/5;border-radius:160px 160px 20px 20px;overflow:hidden;object-fit:cover;
+  background:linear-gradient(160deg,#9fb083,var(--forest));display:flex;align-items:flex-end;justify-content:center;padding:18px}
+.portrait .ph{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.9)}
+.facts{background:var(--haze);border-radius:18px;padding:24px 26px;margin-top:24px}
+.facts h3{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra-deep);font-weight:700;margin-bottom:14px}
+.facts ul{list-style:none}
+.facts li{font-size:.92rem;padding:7px 0;border-bottom:1px solid rgba(55,70,43,.12)}
+.facts li:last-child{border-bottom:none}
+.facts li strong{color:var(--forest);font-weight:600}
+
+.cta{display:inline-block;margin-top:22px;background:var(--forest);color:var(--paper);text-decoration:none;
+  padding:12px 26px;border-radius:40px;font-weight:600;font-size:.9rem;transition:background .3s,transform .3s}
+.cta:hover{background:var(--grape);transform:translateY(-2px)}
+
+footer{background:var(--grape);color:var(--cream);padding:40px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--terra);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Delany Broome<span class="dot">.</span></a>
+  <a class="back" href="index.html">&larr; Back to site</a>
+</div></nav>
+
+<header class="ahead"><div class="wrap">
+  <span class="kicker">About</span>
+  <h1>Delany Broome</h1>
+  <div class="tag">Climate scientist working toward pollution-free waters</div>
+</div></header>
+
+<div class="wrap grid">
+  <div class="bio">
+    <p>I am a climate scientist who started out as a chemist. For more than eight years I have worked on water quality, environmental data, and pollution response, mostly inside California's environmental agencies. What I care about is making environmental decisions easier to see and check, especially when it comes to pollution response, water chemistry, and environmental justice.</p>
+
+    <p>Before UC Berkeley, I was a Senior Environmental Scientist with the California Department of Fish and Wildlife, where I led statewide coordination of oil spill contingency planning across California's coastal regions. The job meant working closely with federal agencies, tribal governments, and regional partners to strengthen preparedness and response, including newer questions the old plans never accounted for, like renewable fuels and culturally sensitive site protections.</p>
+
+    <p>Earlier, at the California State Water Resources Control Board, I managed large environmental datasets and built the tools that made that data usable for the policy and regulatory teams who relied on it. I wrote automation and machine learning processes to handle the analysis, which freed those teams to spend their time on the decisions instead of the cleanup.</p>
+
+    <p>I started in laboratory and field science, running water quality tests and environmental sampling in a lot of different places, including the post-wildfire response in California after the 2018 Camp Fire.</p>
+
+    <h2>What I am doing now</h2>
+    <p>I am finishing a Master of Climate Solutions at UC Berkeley, working on climate systems, open science, and environmental data transparency. It is the same thing I have always cared about, now aimed at climate. I am especially drawn to climate disaster management, the work of getting the science, the data, and the response ready before the disaster arrives rather than after.</p>
+
+    <h2>Away from the desk</h2>
+    <p>When I am not at work you can usually find me cooking or trying out a new food spot, studying tarot, or somewhere near the nearest body of water. I think climate work goes better when there is still room for joy in it, so I keep some. I have roots in Sacramento and the Central Valley, a home in the Bay Area, and a soft spot for traveling, seeing new places, and trying things I have not tried before.</p>
+
+    <a class="cta" href="index.html#hello">Get in touch &rarr;</a>
+  </div>
+
+  <aside class="rail">
+    <!-- PORTRAIT: replace this div with <img class="portrait" src="images/portrait.jpg" alt="Delany Broome"> -->
+    <div class="portrait" role="img" aria-label="portrait placeholder"><span class="ph">a portrait of you</span></div>
+    <div class="facts">
+      <h3>Quick facts</h3>
+      <ul>
+        <li><strong>Now</strong> M.S. Climate Solutions, UC Berkeley</li>
+        <li><strong>Focus</strong> Climate disaster management, pollution response, environmental data</li>
+        <li><strong>Background</strong> Chemistry, water quality, statewide spill response</li>
+        <li><strong>Tools</strong> Python, SQL, Tableau, GIS</li>
+        <li><strong>Based in</strong> Bay Area, California</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer><div class="wrap">&copy; 2026 Delany Broome &middot; <a href="index.html">Back to the site</a></div></footer>
+
+</body>
+</html>

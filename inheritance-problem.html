@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Inheritance Problem &middot; Delany Broome</title>
+
+<!-- Reading page. Full text of the independent study, hosted for the site.
+     Title reset to title + subtitle (no colon) to match your house style.
+     Crosspost to Substack whenever you like. No dashes added in any chrome. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 60'%3E%3Cg fill='none' stroke='%2337462B' stroke-width='3'%3E%3Cpath d='M20 58 V8'/%3E%3Cpath d='M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z'/%3E%3Cpath d='M20 34c8 0 12-6 12-12-8 0-12 6-12 12z'/%3E%3C/g%3E%3Ccircle cx='20' cy='6' r='4' fill='%23EDBEE4'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  --paper:#F6F1E7;--haze:#EFE7EE;--cream:#F3D0C3;--ink:#33402A;--forest:#37462B;--olive:#5F5420;
+  --sage:#AEA181;--terra:#EA785B;--terra-deep:#A84F3D;--lilac:#EDBEE4;--plum:#5A384B;--grape:#3F0013;
+  --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;
+}
+header.art h1,article h2,article h3{font-variation-settings:"opsz" 144}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.75;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:720px;margin:0 auto;padding:0 28px}
+a{color:var(--terra-deep)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,70,43,.12)}
+nav .nwrap{max-width:720px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-family:var(--display);font-size:1.2rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.brand .dot{color:var(--terra)}
+.back{font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink)}.back:hover{color:var(--terra-deep)}
+
+header.art{padding:68px 0 40px}
+.kicker{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep);display:block;margin-bottom:18px}
+header.art h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,7vw,4.2rem);color:var(--forest);line-height:1;letter-spacing:-.02em}
+header.art .sub{font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,3vw,1.6rem);color:var(--plum);margin-top:16px;line-height:1.25}
+.byline{margin-top:26px;font-size:.9rem;opacity:.8;border-top:1px solid rgba(55,70,43,.25);border-bottom:1px solid rgba(55,70,43,.25);padding:16px 0}
+.byline strong{color:var(--forest)}
+
+article{padding:24px 0 60px;font-size:1.08rem}
+article h2{font-family:var(--display);font-weight:500;font-size:1.7rem;color:var(--forest);margin:48px 0 14px;line-height:1.1}
+article p{margin:0 0 20px}
+article p.lead:first-of-type::first-letter{
+  font-family:var(--display);float:left;font-size:3.6rem;line-height:.8;padding:8px 10px 0 0;color:var(--terra-deep);font-weight:500;
+}
+sup a{color:var(--terra-deep);text-decoration:none;font-weight:600;font-size:.7em;padding:0 1px}
+sup a:hover{text-decoration:underline}
+
+.notes{border-top:2px solid var(--forest);margin-top:54px;padding-top:30px}
+.notes h2{margin-top:0}
+.notes ol{padding-left:22px;font-size:.86rem;line-height:1.6;color:var(--ink);opacity:.85}
+.notes li{margin-bottom:10px}
+.notes li::marker{color:var(--terra-deep)}
+.backtop{display:inline-block;margin-top:36px;font-size:.85rem;font-weight:600;text-decoration:none;color:var(--terra-deep)}
+
+footer{background:var(--grape);color:var(--cream);padding:40px 0;text-align:center;font-size:.85rem;margin-top:60px}
+footer a{color:var(--terra);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav><div class="nwrap">
+  <a class="brand" href="index.html">Delany Broome<span class="dot">.</span></a>
+  <a class="back" href="index.html#writing">&larr; All writing</a>
+</div></nav>
+
+<header class="art"><div class="wrap">
+  <span class="kicker">Independent study &middot; Spring 2026</span>
+  <h1>The Inheritance Problem</h1>
+  <div class="sub">Cold War waste, California's nuclear legacy, and the contingency planning dilemma</div>
+  <div class="byline">
+    <strong>Delany Broome</strong> &middot; Master of Climate Solutions, UC Berkeley<br>
+    Faculty consultation: Dr. David K. Shuh, Lawrence Berkeley National Laboratory
+  </div>
+</div></header>
+
+<article><div class="wrap">
+
+  <h2>Introduction</h2>
+  <p class="lead">The United States entered the nuclear age with a production system but not a disposal system. Between 1944 and 1990, the Hanford Site alone produced roughly 67.4 metric tons of plutonium, supplying the majority of fissile material for an arsenal that peaked at more than 60,000 weapons.<sup><a id="r1" href="#fn1">1</a></sup> What remained when the reactors shut down was a different problem entirely: 56 million gallons of high-level waste in 177 aging underground tanks, more than 2,000 contaminated soil sites, and nearly 200 square miles of contaminated groundwater.<sup><a id="r2" href="#fn2">2</a></sup> Each of these is a Cold War byproduct without a permanent home.</p>
+  <p>This is the contingency planning dilemma in its sharpest form. Every disposal solution proposed since 1945 has, through political or technical failure, slipped into the category of interim storage. Vitrification, deep geologic repositories, and ocean dumping have each been imagined as endpoints and then quietly converted into stopgaps. The result is a system in which contingency is no longer a backup plan but the operating reality. This paper traces that dilemma through three lenses: the Bay Area origins of the weapons complex, the California-specific history of nuclear disposal, and the ongoing work at Lawrence Berkeley National Laboratory to make the chemistry of containment tractable.</p>
+
+  <h2>Berkeley and the origin of the waste problem</h2>
+  <p>The institutional architecture of U.S. nuclear chemistry was built at Berkeley. Ernest Lawrence founded the Radiation Laboratory in 1931, and by 1941 Glenn Seaborg, Edwin McMillan, and Joseph Kennedy had used Lawrence's 60-inch cyclotron to isolate plutonium-239.<sup><a id="r3" href="#fn3">3</a></sup> That discovery directly enabled the Manhattan Project decision to construct plutonium production reactors at Hanford. The Rad Lab, later renamed Lawrence Berkeley National Laboratory, became the cradle of what historians call big science, a model of large, federally funded, mission-oriented research that the postwar nuclear weapons program would scale to industrial dimensions.<sup><a id="r4" href="#fn4">4</a></sup></p>
+  <p>This origin matters for two reasons. First, the production-first logic was institutional, not accidental. The Manhattan Project and its Cold War successors were organized around making fissile material, with waste treated as a tractable later problem. Second, the Bay Area itself absorbed the operational consequences. Naval facilities at Hunters Point, Treasure Island, and Mare Island handled radiological materials throughout the late 1940s and 1950s, including radium paint, thorium-bearing instruments, and ships returning contaminated from Operation Crossroads.<sup><a id="r5" href="#fn5">5</a></sup> The waste problem began at the same locations that built the bombs.</p>
+
+  <h2>California's nuclear disposal history</h2>
+  <p>The first U.S. answer to high-level radioactive waste was the Pacific Ocean. Beginning in 1946, the Atomic Energy Commission disposed of waste in 55-gallon drums dropped roughly 50 kilometers off the California coast near the Farallon Islands. By 1970, when the practice ended, approximately 90,000 barrels had been disposed of at sites in the Pacific and North Atlantic.<sup><a id="r6" href="#fn6">6</a></sup> In Southern California, separate dumping operations between 1946 and 1970 placed an estimated 56,000 barrels of radioactive waste in the Southern California Bight. A 2024 survey led by David Valentine of UC Santa Barbara confirmed low-level radioactive waste was dumped offshore by California Salvage, a private contractor that also dumped DDT, and that more than 25,000 barrel-like objects remain on the seafloor.<sup><a id="r7" href="#fn7">7</a></sup> Sea disposal was banned in the United States in 1970 and globally in 1994, but recovery has never been attempted because the financial and technical costs have been judged prohibitive.</p>
+  <p>On land, the California legacy is a network of contaminated sites that the federal Superfund program, established under the Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA) in 1980, was eventually expanded to address. The 1986 Superfund Amendments and Reauthorization Act (SARA) brought Department of Defense and Department of Energy facilities under cleanup obligations.<sup><a id="r8" href="#fn8">8</a></sup> Hunters Point Naval Shipyard was added to the National Priorities List in 1989, with documented radium and thorium contamination from decades of ship repair and damage control training.<sup><a id="r9" href="#fn9">9</a></sup> The Santa Susana Field Laboratory, located 30 miles northwest of downtown Los Angeles, remains one of the most contaminated sites in California. Operated by Rocketdyne and later Boeing under contract to the Atomic Energy Commission and NASA, the site hosted ten experimental nuclear reactors between 1953 and 1980, including the Sodium Reactor Experiment, which suffered a partial meltdown in 1959. For decades, contaminated reactor components were burned in open pits.<sup><a id="r10" href="#fn10">10</a></sup> The 2007 Consent Order between the California Department of Toxic Substances Control and the three responsible parties (Boeing, NASA, and DOE) remains contested, and final soil cleanup may not begin until 2026 or later.</p>
+  <p>The DOE national laboratories in California are themselves part of this history. Legacy transuranic (TRU) waste from LBL, Lawrence Livermore Site 300, and the Vallecitos Nuclear Center was shipped to the Waste Isolation Pilot Plant (WIPP) in New Mexico between 2010 and 2011.<sup><a id="r11" href="#fn11">11</a></sup> WIPP, the only operating deep geologic repository in the United States, is statutorily limited to defense-generated TRU waste. It cannot accept commercial spent fuel or high-level waste.</p>
+
+  <h2>The contingency planning dilemma</h2>
+  <p>The Nuclear Waste Policy Act (NWPA) of 1982 promised a permanent geologic repository for commercial spent fuel and defense high-level waste by 1998. That deadline has now been missed by 28 years. The 1987 amendment to the NWPA, widely known as the Screw Nevada Bill, eliminated Texas and Washington from consideration and designated Yucca Mountain as the sole site for characterization. The decision was procedural rather than scientific: the House Speaker was from Texas and the Senate Majority Leader was from Washington, while Nevada's congressional delegation was the most junior.<sup><a id="r12" href="#fn12">12</a></sup> Site characterization later revealed that water moved through the mountain at least ten times faster than the DOE had estimated, raising concerns about canister corrosion over the regulatory period.<sup><a id="r13" href="#fn13">13</a></sup> The Obama administration withdrew the license application in 2010, and the Government Accountability Office found that the closure was political, not technical.<sup><a id="r14" href="#fn14">14</a></sup> The site has remained in suspended animation through three subsequent administrations.</p>
+  <p>The cumulative effect is that the United States has no operating repository for commercial high-level waste. Spent fuel remains stranded at more than 70 reactor sites across the country, much of it in pools and dry casks originally designed for short-term storage.<sup><a id="r15" href="#fn15">15</a></sup> Hanford's 56 million gallons of tank waste began conversion to glass only in October 2025, when the Hanford Tank Waste Treatment and Immobilization Plant first trapped real waste in vitrified form, more than 40 years after the cleanup mission began.<sup><a id="r16" href="#fn16">16</a></sup></p>
+  <p>The dilemma operates on two timescales simultaneously. The waste itself requires isolation for periods that exceed the lifespan of any human institution. As physicist Hannes Alfvén observed, the central problem is how to keep radioactive waste in storage until it decays over hundreds of thousands of years, a horizon that geology, not politics, sets.<sup><a id="r17" href="#fn17">17</a></sup> The political timescale, meanwhile, is measured in election cycles. Sweden and Finland are the only two countries to have advanced a permanent geologic repository to construction, and both succeeded through site selection processes that prioritized public consultation and host community consent, an approach that the U.S. NWPA and its 1987 amendment explicitly bypassed.<sup><a id="r18" href="#fn18">18</a></sup> The practical consequence is that interim storage has become the de facto permanent solution. Each generation of policymakers inherits the same set of options and, by deferring decision, locks in the status quo. The contingency plan, in other words, is the plan.</p>
+
+  <h2>LBL and the chemistry of containment</h2>
+  <p>If contingency is the operating reality, then the task of bounding its costs falls partly to laboratory chemistry. The Glenn T. Seaborg Center at LBL hosts the Actinide Chemistry Group, which uses soft X-ray spectroscopy at the Advanced Light Source to characterize how radionuclides behave in candidate waste forms.<sup><a id="r19" href="#fn19">19</a></sup> Dr. David K. Shuh and collaborators have focused in particular on technetium-99, a fission product with a 213,000-year half-life that is both abundant in defense waste and highly mobile in the environment. Its retention in borosilicate waste glass is one of the central technical challenges of the Hanford vitrification process.</p>
+  <p>Shuh's group has shown that technetium and its commonly used surrogate, rhenium, behave dissimilarly in borosilicate glass under varying redox conditions, complicating the use of rhenium as a stand-in for engineering tests.<sup><a id="r20" href="#fn20">20</a></sup> Subsequent vapor hydration work has examined how technetium-bearing glass corrodes under repository-relevant conditions, with implications for how long vitrified waste can be expected to contain its inventory.<sup><a id="r21" href="#fn21">21</a></sup> Parallel work on uranyl bonding and actinide electronic structure has refined the molecular-level understanding of how heavy elements interact with ligands relevant to both reprocessing and immobilization.<sup><a id="r22" href="#fn22">22</a></sup> Cement-based barrier materials, also examined using soft X-ray spectromicroscopy, are part of the same effort to model long-term containment.<sup><a id="r23" href="#fn23">23</a></sup></p>
+  <p>This work does not solve the political dilemma. It does something more modest and more durable: it characterizes, at the level of electronic structure, what containment actually means for the elements that dominate the radiotoxicity of Cold War waste. The throughline is striking. The laboratory that helped produce the first plutonium for the Manhattan Project is now one of the principal sites of basic research on how to keep that legacy isolated from the biosphere.</p>
+
+  <h2>Conclusion</h2>
+  <p>The Cold War waste problem in the United States has resisted resolution for four reasons that compound one another. The waste was produced before a disposal system existed. The geographies of production became the geographies of contamination, often in places (Hunters Point, Santa Susana, Hanford) that are now adjacent to substantial populations. The political process for siting a repository was designed for efficiency rather than legitimacy and lost both. And the timescales involved exceed the planning horizons of the institutions responsible for managing them.</p>
+  <p>Contingency planning, under these conditions, is not a fallback. It is the system. Vitrification at Hanford, interim dry-cask storage at reactor sites, and ongoing Superfund remediation at California facilities including Santa Susana and Hunters Point are not bridging measures toward a permanent solution. They are the working state of U.S. nuclear waste policy in 2026. The chemistry of containment, advanced at LBL and partner laboratories, sets the upper bound on how well that working state can perform. Closing the gap between what the chemistry permits and what the politics has delivered is the inherited task of the next several decades.</p>
+
+  <div class="notes">
+    <h2>Notes</h2>
+    <ol>
+      <li id="fn1">U.S. Department of Energy, "Hanford Site Spotlight," EPA Federal Facilities, 2025; Britannica, "Hanford Site," 2026. <a href="#r1">&#8617;</a></li>
+      <li id="fn2">U.S. Environmental Protection Agency, "Hanford Site Spotlight," 2025. <a href="#r2">&#8617;</a></li>
+      <li id="fn3">Atomic Heritage Foundation, "University of California, Berkeley," Nuclear Museum. <a href="#r3">&#8617;</a></li>
+      <li id="fn4">Lawrence Berkeley National Laboratory, "History of Berkeley Lab," lbl.gov. <a href="#r4">&#8617;</a></li>
+      <li id="fn5">Kevin Chen, "Radiological and Redevelopment History of Hunters Point and Treasure Island," Nuclear Insecurity in the Bay Area and Beyond, 2020. <a href="#r5">&#8617;</a></li>
+      <li id="fn6">Horst Hamm, "Nuclear Waste I: Final Disposal Site, The Oceans," Nuclear Free Future Foundation, citing International Atomic Energy Agency records. <a href="#r6">&#8617;</a></li>
+      <li id="fn7">David L. Valentine et al., findings on offshore radioactive waste disposal, summarized in "Toxic Ocean Dumps off Southern California," accessed May 2026. <a href="#r7">&#8617;</a></li>
+      <li id="fn8">U.S. Environmental Protection Agency, "Radioactively Contaminated Sites," 2026; CERCLA (1980); SARA (1986). <a href="#r8">&#8617;</a></li>
+      <li id="fn9">Chen, "Radiological and Redevelopment History of Hunters Point and Treasure Island." <a href="#r9">&#8617;</a></li>
+      <li id="fn10">Committee to Bridge the Gap, "The Santa Susana Field Laboratory"; Caroline Reiser, "Questions and Answers About the Santa Susana Field Lab," Natural Resources Defense Council, 2024. <a href="#r10">&#8617;</a></li>
+      <li id="fn11">U.S. Department of Energy, "Waste Isolation Pilot Plant History and Timeline," wipp.energy.gov. <a href="#r11">&#8617;</a></li>
+      <li id="fn12">Frank von Hippel, "Why US nuclear waste policy got stalled. And what to do about it," Bulletin of the Atomic Scientists, 2024. <a href="#r12">&#8617;</a></li>
+      <li id="fn13">von Hippel, "Why US nuclear waste policy got stalled." <a href="#r13">&#8617;</a></li>
+      <li id="fn14">U.S. Government Accountability Office findings, cited in "Yucca Mountain nuclear waste repository," accessed May 2026. <a href="#r14">&#8617;</a></li>
+      <li id="fn15">Allison Macfarlane, "The Yucca Mountain nuclear waste site has always been a political football," Bulletin of the Atomic Scientists, 2020. <a href="#r15">&#8617;</a></li>
+      <li id="fn16">Chemical and Engineering News, "Hanford Site finally turns nuclear waste into glass," February 2026. <a href="#r16">&#8617;</a></li>
+      <li id="fn17">Hannes Alfvén, quoted in legislative history of the Nuclear Waste Policy Act. <a href="#r17">&#8617;</a></li>
+      <li id="fn18">von Hippel, "Why US nuclear waste policy got stalled." <a href="#r18">&#8617;</a></li>
+      <li id="fn19">D. K. Shuh, "Soft X-ray Radiation Investigations of Materials Relevant to Actinide Science," Florida International University Applied Research Center seminar, 2017. <a href="#r19">&#8617;</a></li>
+      <li id="fn20">W. W. Lukens, D. A. McKeown, A. C. Buechele, I. S. Muller, D. K. Shuh, and I. L. Pegg, "Dissimilar Behavior of Technetium and Rhenium in Borosilicate Waste Glass as Determined by X-ray Absorption Spectroscopy," Chemistry of Materials 19, no. 3 (2007): 559 to 566. <a href="#r20">&#8617;</a></li>
+      <li id="fn21">D. A. McKeown, A. C. Buechele, W. W. Lukens, D. K. Shuh, and I. L. Pegg, "Tc and Re Behavior in Borosilicate Waste Glass Vapor Hydration Tests," Environmental Science and Technology 41, no. 2 (2007): 431 to 436. <a href="#r21">&#8617;</a></li>
+      <li id="fn22">C. Fillaux, D. Guillaumont, J. C. Berthet, R. Copping, D. K. Shuh, T. Tyliszczak, and C. Den Auwer, "Investigating the Electronic Structure and Bonding in Uranyl Compounds by Combining NEXAFS and Quantum Chemistry," Physical Chemistry Chemical Physics 12 (2010): 14253 to 14262. <a href="#r22">&#8617;</a></li>
+      <li id="fn23">R. Dähn, M. Vespa, T. Tyliszczak, E. Wieland, and D. K. Shuh, "Soft X-ray Spectromicroscopy of Cobalt Uptake by Cement," Environmental Science and Technology 45 (2011): 2021 to 2027. <a href="#r23">&#8617;</a></li>
+    </ol>
+    <a class="backtop" href="index.html#writing">&larr; Back to all writing</a>
+  </div>
+
+</div></article>
+
+<footer><div class="wrap">&copy; 2026 Delany Broome &middot; <a href="index.html">Back to the site</a></div></footer>
+
+</body>
+</html>
