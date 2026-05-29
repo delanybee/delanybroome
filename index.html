@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delany Broome</title>
+
+
+<!--
+  ========================================================================
+  HOW TO USE THIS
+  ========================================================================
+  1. PHOTOS: every photo slot is a <div class="photo ..."> with a label.
+     To drop in one of your own images, replace the whole div with:
+        <img class="photo ..." src="images/yourfile.jpg" alt="describe it">
+     keep the same class so it stays in the right frame/shape.
+  2. LINKS: search for href="#" and point them at your real pages
+     (delanybee.github.io/amcvaccine, etc), email, and LinkedIn.
+  3. DEPLOY: save as index.html in a GitHub repo, turn on Pages, done.
+  Voice rule honored throughout: no em dashes, no en dashes.
+  ========================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#F6F1E7;        /* warm cream ground */
+  --cream:#F3D0C3;        /* sweet cream block */
+  --ink:#33402A;          /* deep leaf, text */
+  --forest:#37462B;       /* palm leaf */
+  --olive:#5F5420;        /* grasslands */
+  --sage:#AEA181;         /* dried edamame */
+  --terra:#EA785B;        /* terra cotta accent */
+  --terra-deep:#A84F3D;   /* wilted brown */
+  --lilac:#EDBEE4;
+  --bluebell:#A1A8BE;
+  --plum:#5A384B;         /* dulcet violet */
+  --grape:#3F0013;        /* deep maroon */
+
+  --display:"Fraunces",Georgia,serif;
+  --body:"Hanken Grotesk",system-ui,sans-serif;
+
+  --maxw:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* grain overlay for atmosphere */
+body::after{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;z-index:9999;
+  opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* labels / kickers */
+.kicker{
+  font-family:var(--body);
+  font-weight:600;
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--terra-deep);
+}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+.it{font-style:italic}
+
+/* ===================== NAV ===================== */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(246,241,231,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(55,70,43,.12);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-size:1.35rem;font-weight:500;letter-spacing:-.01em}
+.brand .dot{color:var(--terra)}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{
+  color:var(--ink);text-decoration:none;font-size:.86rem;font-weight:500;
+  letter-spacing:.02em;position:relative;padding:4px 0;
+}
+.navlinks a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;
+  background:var(--terra);transition:width .35s ease;
+}
+.navlinks a:hover::after{width:100%}
+.navlinks .say{
+  background:var(--forest);color:var(--paper);padding:9px 18px;border-radius:40px;
+}
+.navlinks .say::after{display:none}
+.navlinks .say:hover{background:var(--terra-deep)}
+@media(max-width:760px){.navlinks a:not(.say){display:none}}
+
+/* ===================== HERO ===================== */
+.hero{padding:60px 0 0}
+.hero .kicker{display:block;margin-bottom:18px}
+.heroframe{
+  position:relative;
+  border-radius:280px 280px 24px 24px;
+  overflow:hidden;
+  height:min(64vh,560px);
+  background:
+    radial-gradient(120% 90% at 30% 20%, #c8d3b4 0%, transparent 55%),
+    radial-gradient(120% 120% at 80% 90%, var(--sage) 0%, transparent 60%),
+    linear-gradient(160deg,#9fb083,#7d915f 60%,var(--olive));
+  display:flex;align-items:center;justify-content:center;
+}
+.heroframe .ph-label{color:rgba(255,255,255,.85)}
+.heronames{
+  position:relative;
+  margin-top:-78px;
+  text-align:center;
+  z-index:5;
+  mix-blend-mode:normal;
+}
+.heronames h1{
+  font-size:clamp(3.6rem,15vw,12rem);
+  color:var(--forest);
+  letter-spacing:-.03em;
+  line-height:.88;
+}
+.herosub{
+  max-width:640px;margin:26px auto 0;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+}
+.herosub .line{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(1.3rem,3.2vw,1.9rem);color:var(--terra-deep);
+}
+.herosub p{max-width:540px;color:var(--ink);opacity:.85;font-size:1.02rem}
+.sprig{display:block;margin:34px auto 0;width:30px;opacity:.6}
+
+/* ===================== MARQUEE ===================== */
+.marquee{
+  margin:64px 0 0;background:var(--lilac);
+  border-top:1.5px solid var(--forest);border-bottom:1.5px solid var(--forest);
+  overflow:hidden;white-space:nowrap;
+}
+.marquee .track{
+  display:inline-block;padding:14px 0;
+  animation:slide 26s linear infinite;
+}
+.marquee span{
+  font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--forest);
+  padding:0 6px;
+}
+.marquee .star{color:var(--terra-deep);font-style:normal}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===================== SECTION SHELL ===================== */
+section{padding:96px 0}
+.sechead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+.sechead h2{font-size:clamp(2.4rem,6vw,4.4rem);color:var(--forest)}
+.lede{max-width:620px;font-size:1.08rem;color:var(--ink);opacity:.85;margin-bottom:48px}
+
+/* ===================== THE BRAID ===================== */
+.braid{background:var(--cream);position:relative}
+.braid .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.braid h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--forest);margin-bottom:24px}
+.braid h2 .it{color:var(--terra-deep)}
+.braid p{font-size:1.12rem;line-height:1.7;max-width:42ch}
+.flowerimg{
+  width:100%;aspect-ratio:1;
+  background:
+    radial-gradient(circle at 40% 35%, #f4c9b6, transparent 55%),
+    linear-gradient(150deg,var(--terra),var(--terra-deep) 70%,var(--plum));
+  -webkit-mask:var(--flower) center/contain no-repeat;
+  mask:var(--flower) center/contain no-repeat;
+  display:flex;align-items:center;justify-content:center;
+}
+.flowerimg .ph-label{color:rgba(255,255,255,.9)}
+:root{--flower:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' d='M50 4c11 0 16 14 11 23 11-6 25 0 25 12 0 13-14 18-25 12 5 9 0 23-11 23s-16-14-11-23c-11 6-25 1-25-12 0-12 14-18 25-12C34 18 39 4 50 4z'/%3E%3C/svg%3E")}
+@media(max-width:800px){.braid .inner{grid-template-columns:1fr;gap:36px}}
+
+/* ===================== WORK ===================== */
+.worklist{display:grid;gap:0;border-top:1px solid rgba(55,70,43,.2)}
+.workrow{
+  display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:start;
+  padding:30px 8px;border-bottom:1px solid rgba(55,70,43,.2);
+  text-decoration:none;color:inherit;transition:background .3s,padding-left .3s;
+}
+.workrow:hover{background:rgba(234,120,91,.08);padding-left:18px}
+.worknum{font-family:var(--display);font-size:1.1rem;color:var(--terra-deep);padding-top:6px}
+.workrow h3{font-size:1.7rem;color:var(--forest);margin-bottom:8px;line-height:1.1}
+.workrow p{font-size:.98rem;opacity:.82;max-width:60ch}
+.worktag{
+  font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  color:var(--olive);white-space:nowrap;padding-top:8px;text-align:right;
+}
+.workrow .arrow{display:inline-block;color:var(--terra);font-weight:600;font-size:.9rem;margin-top:10px;font-family:var(--body)}
+@media(max-width:680px){.workrow{grid-template-columns:auto 1fr}.worktag{display:none}}
+
+/* ===================== FIELD NOTES ===================== */
+.notes{background:var(--forest);color:var(--paper)}
+.notes .kicker{color:var(--lilac)}
+.notes h2{color:var(--paper)}
+.notes .lede{color:var(--paper);opacity:.8}
+.notegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.note{
+  background:rgba(246,241,231,.06);border:1px solid rgba(246,241,231,.18);
+  border-radius:18px;padding:28px;transition:transform .35s,background .35s;
+}
+.note:hover{transform:translateY(-6px);background:rgba(246,241,231,.1)}
+.note .nt{
+  display:inline-block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:700;padding:5px 12px;border-radius:30px;margin-bottom:18px;
+}
+.nt.policy{background:var(--terra);color:var(--grape)}
+.nt.garden{background:var(--bluebell);color:var(--grape)}
+.nt.tarot{background:var(--lilac);color:var(--grape)}
+.note h3{font-size:1.5rem;color:var(--paper);margin-bottom:12px;line-height:1.1}
+.note p{font-size:.94rem;opacity:.78}
+@media(max-width:800px){.notegrid{grid-template-columns:1fr}}
+
+/* ===================== PHOTOGRAPHS ===================== */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gphoto{
+  aspect-ratio:4/5;display:flex;align-items:flex-end;
+  padding:20px;color:var(--paper);position:relative;overflow:hidden;
+  border-radius:120px 18px 120px 18px;
+}
+.gphoto:nth-child(2){border-radius:18px 120px 18px 120px;aspect-ratio:1}
+.gphoto:nth-child(3){border-radius:18px 120px 120px 18px}
+.gphoto:nth-child(4){border-radius:120px 18px 18px 120px}
+.gphoto:nth-child(5){border-radius:18px 18px 120px 120px;aspect-ratio:1}
+.gphoto:nth-child(6){border-radius:120px 120px 18px 18px}
+.gphoto .cap{font-family:var(--display);font-style:italic;font-size:1.25rem;z-index:2;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.g1{background:linear-gradient(160deg,#c9a86a,var(--olive))}
+.g2{background:linear-gradient(160deg,var(--bluebell),#5d6b7d)}
+.g3{background:linear-gradient(160deg,#d98c72,var(--terra-deep))}
+.g4{background:linear-gradient(160deg,#9fb083,var(--forest))}
+.g5{background:linear-gradient(160deg,var(--lilac),var(--plum))}
+.g6{background:linear-gradient(160deg,#e0b48f,var(--sage))}
+@media(max-width:760px){.gallery{grid-template-columns:1fr 1fr}}
+
+/* ===================== WRITING ===================== */
+.writing{background:var(--cream)}
+.writelist{display:grid;gap:20px}
+.writerow{
+  display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  padding:24px 4px;border-bottom:1px solid rgba(55,70,43,.18);
+  text-decoration:none;color:inherit;transition:transform .3s;
+}
+.writerow:hover{transform:translateX(8px)}
+.writerow h3{font-size:1.5rem;color:var(--forest)}
+.writerow p{font-size:.95rem;opacity:.78;margin-top:6px;max-width:54ch}
+.writerow .meta{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep);font-weight:600;white-space:nowrap}
+
+/* ===================== FOOTER ===================== */
+footer{background:var(--grape);color:var(--cream);padding:90px 0 50px}
+footer .kicker{color:var(--terra)}
+footer h2{font-size:clamp(2.6rem,8vw,5rem);color:var(--cream);margin:14px 0 26px;line-height:.95}
+footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
+.foot-contact{display:flex;gap:16px;flex-wrap:wrap}
+.foot-contact a{
+  color:var(--grape);background:var(--cream);text-decoration:none;
+  padding:12px 24px;border-radius:40px;font-weight:600;font-size:.92rem;transition:background .3s,color .3s;
+}
+.foot-contact a:hover{background:var(--terra);color:var(--cream)}
+.footbar{margin-top:60px;padding-top:24px;border-top:1px solid rgba(243,208,195,.25);
+  display:flex;justify-content:space-between;font-size:.8rem;opacity:.65;flex-wrap:wrap;gap:8px}
+
+/* ===================== PLACEHOLDER LABEL ===================== */
+.ph-label{
+  font-family:var(--body);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;display:flex;align-items:center;gap:8px;
+}
+
+/* ===================== REVEAL ===================== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.hero .kicker,.heronames,.herosub{opacity:0;animation:rise .9s ease forwards}
+.heronames{animation-delay:.15s}.herosub{animation-delay:.35s}
+@keyframes rise{to{opacity:1;transform:none}from{transform:translateY(20px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Delany Broome<span class="dot">.</span></span>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#notes">Field Notes</a>
+      <a href="#photos">Photographs</a>
+      <a href="#writing">Writing</a>
+      <a class="say" href="#hello">Say hello</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Senior Environmental Scientist &nbsp;&middot;&nbsp; Bay Area &nbsp;&middot;&nbsp; Central Valley roots</span>
+    <!-- HERO PHOTO: replace this div with <img class="heroframe" src="..."> -->
+    <div class="heroframe" role="img" aria-label="hero photograph placeholder">
+      <span class="ph-label">your photograph here</span>
+    </div>
+    <div class="heronames">
+      <h1>Delany Broome</h1>
+    </div>
+    <div class="herosub">
+      <span class="line">I plan for oil spills and I grow tomatoes.</span>
+      <p>Climate work asks a lot. It can still hold room for joy. This site keeps the policy and the garden in one place, on purpose.</p>
+      <svg class="sprig" viewBox="0 0 40 60" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/>
+        <path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>rooted in the central valley</span><span class="star">&#10047;</span>
+    <span>grown in the bay</span><span class="star">&#10047;</span>
+    <span>serious about climate</span><span class="star">&#10047;</span>
+    <span>serious about joy</span><span class="star">&#10047;</span>
+    <span>rooted in the central valley</span><span class="star">&#10047;</span>
+    <span>grown in the bay</span><span class="star">&#10047;</span>
+    <span>serious about climate</span><span class="star">&#10047;</span>
+    <span>serious about joy</span><span class="star">&#10047;</span>
+  </div>
+</div>
+
+<!-- ===================== THE BRAID ===================== -->
+<section class="braid">
+  <div class="wrap inner">
+    <div class="reveal">
+      <h2>Two drawers, <span class="it">one pair of hands</span></h2>
+      <p>Most people file the lab coat in one drawer and the garden gloves in another. I stopped doing that. The same attention that reads a weathering curve reads a tomato leaf. Rigor and joy are not a trade. They feed each other, and the work comes out better for it.</p>
+    </div>
+    <div class="reveal">
+      <!-- FEATURE PHOTO: replace with <img class="flowerimg" src="..."> -->
+      <div class="flowerimg" role="img" aria-label="feature photograph placeholder">
+        <span class="ph-label">a photo you love</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK ===================== -->
+<section id="work">
+  <div class="wrap">
+    <div class="sechead reveal"><span class="kicker">Selected</span><h2>Work</h2></div>
+    <p class="lede reveal">Plans, models, and tools for the parts of climate work that decide who gets protected and who pays.</p>
+    <div class="worklist">
+      <a class="workrow reveal" href="#">
+        <span class="worknum">01</span>
+        <div><h3>2026 State Oil Spill Contingency Plan</h3>
+          <p>Lead author. Coordinated 110 plus federal, state, tribal, and industry partners into one plan California can actually act on.</p></div>
+        <span class="worktag">OSPR &middot; 2026</span>
+      </a>
+      <a class="workrow reveal" href="#">
+        <span class="worknum">02</span>
+        <div><h3>Market mechanisms for methane-reducing livestock tech</h3>
+          <p>Capstone at UC Berkeley, with Spark Climate Solutions. A stress test that found the mechanism failed before the math did, then pointed somewhere better.<br><span class="arrow">View the project &rarr;</span></p></div>
+        <span class="worktag">Capstone &middot; 2026</span>
+      </a>
+      <a class="workrow reveal" href="#">
+        <span class="worknum">03</span>
+        <div><h3>Spark Market Mechanism Navigator</h3>
+          <p>A funder-facing decision tool covering 15 plus mechanism types, tied to Spark's enteric methane roadmap.<br><span class="arrow">Open the tool &rarr;</span></p></div>
+        <span class="worktag">Build &middot; Tool</span>
+      </a>
+      <a class="workrow reveal" href="#">
+        <span class="worknum">04</span>
+        <div><h3>How to hide an oil empire</h3>
+          <p>An independent study reading California's oil infrastructure as a land tenure system, with a counterintuitive move at its center.<br><span class="arrow">Read it &rarr;</span></p></div>
+        <span class="worktag">Essay &middot; Research</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIELD NOTES ===================== -->
+<section id="notes" class="notes">
+  <div class="wrap">
+    <div class="sechead reveal"><span class="kicker">From the journal</span><h2>Field Notes</h2></div>
+    <p class="lede reveal">Short entries. Some policy, some dirt, some cards. They belong on the same page.</p>
+    <div class="notegrid">
+      <div class="note reveal">
+        <span class="nt policy">Policy</span>
+        <h3>The vaccine no farmer asked for</h3>
+        <p>Why a methane-reducing livestock vaccine creates no value for the farmer or the animal, and what that does to the market built on top of it.</p>
+      </div>
+      <div class="note reveal">
+        <span class="nt garden">Garden</span>
+        <h3>What the raised bed is telling me</h3>
+        <p>Notes from the spring beds, and why I trust a plant's stress signals more than most dashboards I have built.</p>
+      </div>
+      <div class="note reveal">
+        <span class="nt tarot">Tarot</span>
+        <h3>The card before the summit</h3>
+        <p>What I pulled the morning of the BERC Energy Summit, and why ritual earns its place inside serious work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHOTOGRAPHS ===================== -->
+<section id="photos">
+  <div class="wrap">
+    <div class="sechead reveal"><span class="kicker">The eye</span><h2>Photographs</h2></div>
+    <p class="lede reveal">Shot on my own camera. Grouped by where I happened to be standing.</p>
+    <div class="gallery">
+      <div class="gphoto g1 reveal"><span class="cap">Central Valley</span></div>
+      <div class="gphoto g2 reveal"><span class="cap">The Bay</span></div>
+      <div class="gphoto g3 reveal"><span class="cap">Copenhagen</span></div>
+      <div class="gphoto g4 reveal"><span class="cap">In the field</span></div>
+      <div class="gphoto g5 reveal"><span class="cap">The garden</span></div>
+      <div class="gphoto g6 reveal"><span class="cap">On the water</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WRITING ===================== -->
+<section id="writing" class="writing">
+  <div class="wrap">
+    <div class="sechead reveal"><span class="kicker">In print and online</span><h2>Writing</h2></div>
+    <p class="lede reveal">Longer thinking, when a paragraph will not hold it.</p>
+    <div class="writelist">
+      <a class="writerow reveal" href="#">
+        <div><h3>How to Win the Talent War</h3>
+          <p>On Nordic institutional design and belonging as competitive strategy.</p></div>
+        <span class="meta">CMR Insights &middot; Forthcoming</span>
+      </a>
+      <a class="writerow reveal" href="#">
+        <div><h3>How to hide an oil empire</h3>
+          <p>Long form, on land, oil, and who quietly holds the title.</p></div>
+        <span class="meta">Essay</span>
+      </a>
+      <a class="writerow reveal" href="#">
+        <div><h3>On Substack</h3>
+          <p>Looser pieces, including the version of the talent essay I wrote for myself first.</p></div>
+        <span class="meta">Newsletter</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="hello">
+  <div class="wrap">
+    <span class="kicker">Say hello</span>
+    <h2>Let's talk.</h2>
+    <p>Delany Broome. Environmental scientist, gardener, cook, and occasional reader of cards. Open to board and commission service, research, and good conversation over coffee.</p>
+    <div class="foot-contact">
+      <a href="mailto:you@example.com">Email</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Substack</a>
+    </div>
+    <div class="footbar">
+      <span>&copy; 2026 Delany Broome</span>
+      <span>Photographs my own. Built with care.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

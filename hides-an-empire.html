@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Oil Industry Hides an Empire &middot; Delany Broome</title>
+
+<!-- Reading page. Full text of the independent study, hosted for the site,
+     cohesive with the garden aesthetic. The interactive map stays the
+     companion deliverable and links out. No dashes added in any chrome. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 60'%3E%3Cg fill='none' stroke='%2337462B' stroke-width='3'%3E%3Cpath d='M20 58 V8'/%3E%3Cpath d='M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z'/%3E%3Cpath d='M20 34c8 0 12-6 12-12-8 0-12 6-12 12z'/%3E%3C/g%3E%3Ccircle cx='20' cy='6' r='4' fill='%23EDBEE4'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  --paper:#F6F1E7;--haze:#EFE7EE;--cream:#F3D0C3;--ink:#33402A;--forest:#37462B;--olive:#5F5420;
+  --sage:#AEA181;--terra:#EA785B;--terra-deep:#A84F3D;--lilac:#EDBEE4;--plum:#5A384B;--grape:#3F0013;
+  --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;
+}
+header.art h1,article h2{font-variation-settings:"opsz" 144}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.75;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:720px;margin:0 auto;padding:0 28px}
+a{color:var(--terra-deep)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,70,43,.12)}
+nav .nwrap{max-width:720px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-family:var(--display);font-size:1.2rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.brand .dot{color:var(--terra)}
+.back{font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink)}.back:hover{color:var(--terra-deep)}
+
+header.art{padding:68px 0 36px}
+.kicker{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep);display:block;margin-bottom:18px}
+header.art h1{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,6.4vw,4rem);color:var(--forest);line-height:1.02;letter-spacing:-.02em}
+header.art .sub{font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,3vw,1.6rem);color:var(--plum);margin-top:16px;line-height:1.25}
+.byline{margin-top:26px;font-size:.9rem;opacity:.8;border-top:1px solid rgba(55,70,43,.25);border-bottom:1px solid rgba(55,70,43,.25);padding:16px 0}
+.byline strong{color:var(--forest)}
+
+.callout{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:var(--forest);color:var(--paper);border-radius:18px;padding:22px 26px;margin:30px 0 6px}
+.callout .ctxt{font-size:.95rem;max-width:42ch}
+.callout .ctxt strong{font-family:var(--display);font-weight:500;font-size:1.15rem;display:block;margin-bottom:4px;color:var(--lilac)}
+.callout a.cgo{background:var(--terra);color:var(--grape);text-decoration:none;font-weight:600;font-size:.88rem;
+  padding:11px 22px;border-radius:40px;white-space:nowrap;transition:background .3s,transform .3s}
+.callout a.cgo:hover{background:var(--lilac);transform:translateY(-2px)}
+
+article{padding:24px 0 60px;font-size:1.08rem}
+article h2{font-family:var(--display);font-weight:500;font-size:1.7rem;color:var(--forest);margin:48px 0 14px;line-height:1.1}
+article p{margin:0 0 20px}
+article p.lead:first-of-type::first-letter{
+  font-family:var(--display);float:left;font-size:3.6rem;line-height:.8;padding:8px 10px 0 0;color:var(--terra-deep);font-weight:500;
+}
+sup a{color:var(--terra-deep);text-decoration:none;font-weight:600;font-size:.7em;padding:0 1px}
+sup a:hover{text-decoration:underline}
+
+.notes{border-top:2px solid var(--forest);margin-top:54px;padding-top:30px}
+.notes h2{margin-top:0}
+.notes ol{padding-left:22px;font-size:.84rem;line-height:1.6;color:var(--ink);opacity:.85}
+.notes li{margin-bottom:10px}
+.notes li::marker{color:var(--terra-deep)}
+.backtop{display:inline-block;margin-top:36px;font-size:.85rem;font-weight:600;text-decoration:none;color:var(--terra-deep)}
+
+footer{background:var(--grape);color:var(--cream);padding:40px 0;text-align:center;font-size:.85rem;margin-top:60px}
+footer a{color:var(--terra);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav><div class="nwrap">
+  <a class="brand" href="index.html">Delany Broome<span class="dot">.</span></a>
+  <a class="back" href="index.html#writing">&larr; All writing</a>
+</div></nav>
+
+<header class="art"><div class="wrap">
+  <span class="kicker">Independent study &middot; Spring 2026</span>
+  <h1>How the Oil Industry Hides an Empire</h1>
+  <div class="sub">California's oil infrastructure and the land-owning business</div>
+  <div class="byline">
+    <strong>Delany Broome</strong> &middot; Master of Climate Solutions, UC Berkeley<br>
+    Consultations: Ed Murphy, Pipeline and Hazardous Materials Safety Administration &middot; Stephen Bieda III, Ph.D., NOAA
+  </div>
+
+  <div class="callout">
+    <div class="ctxt"><strong>Companion deliverable</strong>The California Oil Infrastructure Interactive Map assembles the pipelines, wells, refineries, and platforms into one view.</div>
+    <a class="cgo" href="https://delanybee.github.io/howtohideaoilempire/" target="_blank" rel="noopener">Open the map &rarr;</a>
+  </div>
+</div></header>
+
+<article><div class="wrap">
+
+  <h2>Introduction</h2>
+  <p class="lead">McDonald's, famously, is in the real estate business as much as the food business. Oil and gas is in the land business as much as the energy business, and the land business is the half that nobody reads about. As of fiscal year 2024, oil and gas companies held leases on more than 26 million acres of federal public land in the United States, an area larger than Virginia, with more than half of those acres sitting idle.<sup><a id="r1" href="#fn1">1</a></sup> The leases were priced under a 1920 statute that has never been substantively updated, with minimums as low as $2 an acre.<sup><a id="r2" href="#fn2">2</a></sup> The Bureau of Land Management's mineral estate, the larger universe from which those leases are drawn, covers roughly 700 million acres, about 30% of the country.<sup><a id="r3" href="#fn3">3</a></sup></p>
+  <p>Reframed this way, the visible activity of drilling, refining, and combusting represents only the fraction of the portfolio that current commodity prices justify monetizing. The rest is option value, a right to drill held against future demand at prices low enough that hanging onto an unproductive lease costs almost nothing. A barrel in the ground at $2 an acre is a different financial instrument than a barrel above it at $70, and the industry's balance sheet is dominated by the former.</p>
+  <p>That distinction matters for policy. Oil is typically treated as a flow problem, in the language of how much is produced, refined, consumed, and taxed. The binding constraint sits upstream of flow, in the question of who holds tenure over the resource and on what terms. Climate policy that does not engage tenure cannot reach the asset it claims to regulate.</p>
+  <p>This study makes the tenure argument visible. The deliverable is an interactive map of California's oil infrastructure: the pipelines, wells, refineries, offshore platforms, terminals, and legacy facilities that the public record documents but no single agency presents whole. California is the right place to make the argument because it is the place where the structural weakness of the system is closest to the surface.</p>
+
+  <h2>Methodology and the map</h2>
+  <p>The interactive map synthesizes data that the federal and state regulatory architecture deliberately holds in separate places. PHMSA's National Pipeline Mapping System tracks the pipelines.<sup><a id="r4" href="#fn4">4</a></sup> The Bureau of Safety and Environmental Enforcement publishes Outer Continental Shelf platform records.<sup><a id="r5" href="#fn5">5</a></sup> CalGEM holds California's active and orphaned well inventory.<sup><a id="r6" href="#fn6">6</a></sup> The Office of Spill Prevention and Response (OSPR) maintains the oil platform GIS dataset (ds357) and the Incident Tracking Database (ds394).<sup><a id="r7" href="#fn7">7</a></sup> The California Energy Commission publishes refinery, consumption, and import data.<sup><a id="r8" href="#fn8">8</a></sup> Pipeline Safety Trust, FracTracker Alliance, and Global Energy Monitor add the independent analytical layers that fill the remaining gaps.<sup><a id="r9" href="#fn9">9</a></sup></p>
+  <p>None of this data is hidden. All of it is harder to access than it should be. Eight federal and state agencies and at least three independent organizations each hold one slice of the picture. Nobody is responsible for the whole. The map exists because the whole has never been assembled at the scale at which the industry actually operates.</p>
+
+  <h2>California as a fuel island</h2>
+  <p>The continental U.S. oil system runs on a pipeline grid linking Gulf Coast refineries to the Mid-Continent and the East Coast. California is not on that grid. Not one barrel of crude moves between Texas and Los Angeles by pipeline. Every imported barrel reaches the state by tanker, mostly through the Panama Canal or across the Pacific. Imports cover 77% of consumption, with the largest sources in 2024 being Iraq, Ecuador, Saudi Arabia, and Colombia.<sup><a id="r10" href="#fn10">10</a></sup> The state consumes 1.4 million barrels a day, behind only Texas, and produces 285,000 barrels in-state, a little under a quarter of what it burns.<sup><a id="r11" href="#fn11">11</a></sup></p>
+  <p>This is what balkanization looks like in physical form. California is its own oil market, on its own logistics, served by a small and shrinking set of refineries. There were roughly 50 refineries operating in the state in 1980. By January 2026 there were nine.<sup><a id="r12" href="#fn12">12</a></sup> Phillips 66 Wilmington (139,000 barrels a day) is closing late 2025. Valero Benicia (145,000 barrels a day) is closing in April 2026.<sup><a id="r13" href="#fn13">13</a></sup> After both closures, the state's refining capacity falls to about 1.34 million barrels a day, below daily consumption. The capacity buffer that absorbs accidents, scheduled maintenance, and demand spikes drops from roughly 16% to 6.3%. When PBF Martinez caught fire in February 2025, the resulting 100-day shutdown removed 6.8 million barrels from supply, equivalent to draining every gas station in Los Angeles County dry for a week.<sup><a id="r14" href="#fn14">14</a></sup></p>
+  <p>Five companies control 98% of California's gasoline refining capacity.<sup><a id="r15" href="#fn15">15</a></sup> And alone among major oil-producing states, California imposes no severance tax. Texas charges 4.6%, Alaska 35%, North Dakota 11.5%.<sup><a id="r16" href="#fn16">16</a></sup> A 5% rate in California would generate roughly $365 million a year. That money is not collected. It is left on the table.</p>
+  <p>California imports three-quarters of its crude by tanker, refines what arrives through a contracting set of plants controlled by five operators, and collects no severance on the production inside its borders. The capacity buffer that should absorb accidents and maintenance is thin enough that one refinery fire creates a regional shortage. The infrastructure was built for a different scale and a different political moment. Both are gone. What remains is a state that consumes oil at a scale built for a continent-spanning supply system, served by a fragment of that system that nobody else needs and California cannot replace.</p>
+
+  <h2>The federal footprint</h2>
+  <p>The headline numbers are large but underread. The industry operates roughly 918,000 producing wells across the United States and 2.8 million miles of pipeline, enough to wrap the equator 112 times.<sup><a id="r17" href="#fn17">17</a></sup> About 91,000 of those wells sit on federal land. Activity on those lands accounts for roughly 25% of all U.S. greenhouse gas emissions from federal property.<sup><a id="r18" href="#fn18">18</a></sup> The five largest companies (ExxonMobil, Shell, Chevron, BP, and TotalEnergies) reported $102 billion in combined profit in 2024.<sup><a id="r19" href="#fn19">19</a></sup> Federal lobbying by the oil and gas sector that year reached $154 million.<sup><a id="r20" href="#fn20">20</a></sup> Global industry income in 2023 was $2.7 trillion, more than the gross domestic product of France, of which roughly 4% went to clean energy investment.<sup><a id="r21" href="#fn21">21</a></sup></p>
+  <p>The 1920 Mineral Leasing Act remains the foundation of the lease structure. A minimum bid of $2 an acre, combined with the right to stockpile over half of leased acres without producing, converts the public domain into a long-duration option portfolio held cheaply against future demand. Work by Earthjustice and the Center for American Progress has shown that 77% of western federal lands suitable for renewable development sit in areas with low fossil fuel potential, yet remain prioritized for oil and gas leasing.<sup><a id="r22" href="#fn22">22</a></sup> The land that could host solar, wind, and transmission lines is held instead against the possibility of future drilling, at prices fixed in 1920.</p>
+
+  <h2>The protective infrastructure and its dismantling</h2>
+  <p>The systems that respond to oil incidents in California run on barrel fees. The OSPA fee, currently 8.5 cents per barrel under the Lempert-Keene-Seastrand Act of 1990, funds OSPR's field response teams, the Oiled Wildlife Care Network, the drills and exercises program, and the area contingency plans that cover every mile of California's coastline and inland waterway.<sup><a id="r23" href="#fn23">23</a></sup> At a barrel value of $70 or more, that fee runs about 0.12% of the barrel's value. The California Oil Spill Response Fee, capped at twenty-five cents per barrel, funds the state's spill cleanup trust.<sup><a id="r24" href="#fn24">24</a></sup> The architecture funded that way covers everything from response teams to wildlife care to drills to contingency planning across the entire California coast.</p>
+  <p>At the federal level, the Oil Spill Liability Trust Fund was funded by a nine-cent-per-barrel tax generating roughly $500 million a year for the Coast Guard's National Pollution Funds Center. That tax expired on December 31, 2025. No renewal legislation has been introduced.<sup><a id="r25" href="#fn25">25</a></sup></p>
+  <p>Pipeline safety enforcement at PHMSA fell roughly 50% in 2025. The agency opened 111 cases, down 44% from the prior year, and issued eleven fines against a recent annual average of 45. The agency's deputy administrator was appointed directly from the pipeline industry's lobbying group.<sup><a id="r26" href="#fn26">26</a></sup> In the same period the federal methane emissions fee was eliminated, the Environmental Protection Agency's endangerment finding (the scientific determination that greenhouse gases threaten public health) was repealed, six new offshore lease sales were proposed for the California coast for 2027 through 2030, and $982 million of taxpayer money was paid to an oil company to compensate it for canceling its offshore wind investments and reinvesting in fossil fuels.<sup><a id="r27" href="#fn27">27</a></sup></p>
+  <p>The protective infrastructure was thinly funded from the start. It is now being dismantled faster than its barrel-fee base can replenish it. California's spill response operates on a tax measured in tenths of a cent per barrel. The federal lobby for the industry it covers spent $154 million in a single year.</p>
+
+  <h2>The hidden geography</h2>
+  <p>What the map shows, once it is assembled, is how much of California's oil infrastructure has been designed to disappear from view.</p>
+  <p>Twenty-seven offshore platforms line the Southern California coast from Huntington Beach to Point Conception, twenty-three of them in federal Outer Continental Shelf waters and four in state or municipal jurisdiction. Eight are no longer producing and are slated for decommissioning. Platform Harmony, the deepest in California at 1,198 feet of water, is roughly the height of a 23-story office building sitting on the ocean floor with its roof breaking the surface.<sup><a id="r28" href="#fn28">28</a></sup> Most platforms were designed for 30-year service lives and have been operating for 40 to 60 years.</p>
+  <p>In Long Beach Harbor, four artificial islands operate about 1,100 wells into the Wilmington Oil Field, which runs beneath the city itself. The islands are named for the first four astronauts killed in U.S. space program accidents: Freeman, White, Grissom, and Chaffee. They were built between 1965 and 1967 and landscaped with palm trees, waterfalls, and painted sound walls so that they read as part of the harbor view from shore. The Wilmington field has produced about 3 billion barrels since discovery.<sup><a id="r29" href="#fn29">29</a></sup> Camouflage is part of the operating model.</p>
+  <p>Inland, four of the seven largest producing oil fields in the country sit in Kern County. Midway-Sunset has produced roughly 4 billion barrels cumulatively and holds an estimated 27 billion barrels of heavy oil still in place, most of which requires steam injection to extract. The steam draws on water from the California State Water Project, the same system supplying the state's farms and cities.<sup><a id="r30" href="#fn30">30</a></sup> California contains 516 named oil and gas fields and more than 200,000 acres of federal oil leases.<sup><a id="r31" href="#fn31">31</a></sup> The pipelines connecting all of this run mostly underground. The wells stand behind walls, fencing, screening hedgerows, or in country remote enough that nobody passes them. Long Beach Harbor's drilling islands look like a resort.</p>
+  <p>Every piece of what the map shows is documented in the public record. None of it has ever been assembled. Doing the assembly is not a research contribution. It is an act of basic civic visibility. The empire is in the public record. It has simply never been presented as a single thing.</p>
+
+  <div class="notes">
+    <h2>Notes</h2>
+    <ol>
+      <li id="fn1">Bureau of Land Management, Public Land Statistics Fiscal Year 2024 (Washington, DC: U.S. Department of the Interior, 2025), Table 3-5; Center for American Progress, "The Federal Oil and Gas Leasing Program by the Numbers," 2024. <a href="#r1">&#8617;</a></li>
+      <li id="fn2">Mineral Leasing Act of 1920, 30 U.S.C. &sect; 181 et seq.; BLM, Onshore Oil and Gas Leasing Final Rule, 89 Fed. Reg. 30916 (April 23, 2024). <a href="#r2">&#8617;</a></li>
+      <li id="fn3">Bureau of Land Management, "Mineral Resources," blm.gov/programs/energy-and-minerals. <a href="#r3">&#8617;</a></li>
+      <li id="fn4">U.S. Pipeline and Hazardous Materials Safety Administration, National Pipeline Mapping System, npms.phmsa.dot.gov. <a href="#r4">&#8617;</a></li>
+      <li id="fn5">Bureau of Safety and Environmental Enforcement, Pacific Region OCS Platform Inventory, data.bsee.gov. <a href="#r5">&#8617;</a></li>
+      <li id="fn6">California Geologic Energy Management Division (CalGEM), Well Finder and Idle Well Map, maps.conservation.ca.gov/doggr/wellfinder. <a href="#r6">&#8617;</a></li>
+      <li id="fn7">California Department of Fish and Wildlife, Office of Spill Prevention and Response, Oil Platforms (ds357) and Incident Tracking Database (ds394), map.dfg.ca.gov/metadata. <a href="#r7">&#8617;</a></li>
+      <li id="fn8">California Energy Commission, Annual Refinery Report and California Crude Oil Imports, 2024 data release, energy.ca.gov. <a href="#r8">&#8617;</a></li>
+      <li id="fn9">Pipeline Safety Trust, pstrust.org; FracTracker Alliance, fractracker.org; Global Energy Monitor, globalenergymonitor.org. <a href="#r9">&#8617;</a></li>
+      <li id="fn10">California Energy Commission, "Foreign Sources of Crude Oil Imports to California," 2024 annual summary. <a href="#r10">&#8617;</a></li>
+      <li id="fn11">California Energy Commission, "California Oil Refinery History" and "Petroleum Watch," 2025. <a href="#r11">&#8617;</a></li>
+      <li id="fn12">California Energy Commission, refinery operations history; California Air Resources Board, refinery inventory, 1980 baseline. <a href="#r12">&#8617;</a></li>
+      <li id="fn13">Phillips 66, "Phillips 66 Plans to Cease Operations at the Los Angeles Refinery," October 16, 2024; Valero Energy, "Valero to Cease Operations at Benicia Refinery by April 2026," April 16, 2025. <a href="#r13">&#8617;</a></li>
+      <li id="fn14">Stillwater Associates, "PBF Martinez Fire and California Supply Impacts," 2025 analysis; California Energy Commission, Petroleum Watch, February to May 2025 issues. <a href="#r14">&#8617;</a></li>
+      <li id="fn15">California Energy Commission, market concentration data for California gasoline refining, 2025. <a href="#r15">&#8617;</a></li>
+      <li id="fn16">Texas Comptroller of Public Accounts, oil production tax (4.6%); Alaska Department of Revenue, oil and gas production tax (sliding scale, up to 35%); North Dakota Office of State Tax Commissioner, oil and gas gross production tax (5% gross production plus 6.5% extraction = 11.5%); California State Board of Equalization (no severance tax). <a href="#r16">&#8617;</a></li>
+      <li id="fn17">U.S. Energy Information Administration, "Number of Producing Gas Wells" and oil well counts, 2024; U.S. Pipeline and Hazardous Materials Safety Administration, Annual Report Mileage Data, 2024. <a href="#r17">&#8617;</a></li>
+      <li id="fn18">U.S. Geological Survey, "Federal Lands Greenhouse Gas Emissions and Sequestration in the United States," 2023 update; Wilderness Society analyses of BLM oil and gas leasing. <a href="#r18">&#8617;</a></li>
+      <li id="fn19">Company 10-K filings for fiscal year 2024: ExxonMobil, Shell plc, Chevron Corporation, BP plc, and TotalEnergies SE; aggregated by Energy-Profits.org. <a href="#r19">&#8617;</a></li>
+      <li id="fn20">Center for Responsive Politics, OpenSecrets.org, "Oil and Gas Industry Federal Lobbying Totals," 2024. <a href="#r20">&#8617;</a></li>
+      <li id="fn21">International Energy Agency, World Energy Investment 2024; The Climate Center analysis of clean energy capital expenditure share. <a href="#r21">&#8617;</a></li>
+      <li id="fn22">Earthjustice and Center for American Progress, joint analysis of Western federal lands suitability for renewable energy development and conflicting oil and gas lease priority, 2023. <a href="#r22">&#8617;</a></li>
+      <li id="fn23">Lempert-Keene-Seastrand Oil Spill Prevention and Response Act of 1990, California Government Code &sect;&sect; 8670.1 et seq.; Office of Spill Prevention and Response, Per-Barrel Fee Schedule (8.5 cents per barrel). <a href="#r23">&#8617;</a></li>
+      <li id="fn24">California Government Code &sect; 8670.48, Oil Spill Response Fee, capped at $0.25 per barrel. <a href="#r24">&#8617;</a></li>
+      <li id="fn25">Oil Spill Liability Trust Fund, 26 U.S.C. &sect; 9509; U.S. Coast Guard National Pollution Funds Center, reporting on Trust Fund tax expiration, December 31, 2025. <a href="#r25">&#8617;</a></li>
+      <li id="fn26">U.S. Pipeline and Hazardous Materials Safety Administration, Enforcement Reports, Calendar Year 2025; comparative reporting by Pipeline Safety Trust on appointment of deputy administrator from industry trade association. <a href="#r26">&#8617;</a></li>
+      <li id="fn27">Inflation Reduction Act &sect; 60113 (Methane Emissions Reduction Program) and 2025 statutory repeal; EPA, repeal proceedings on the 2009 Endangerment Finding, 74 Fed. Reg. 66496; Bureau of Ocean Energy Management, Draft Proposed Program for 2027 to 2032 Outer Continental Shelf Oil and Gas Leasing; reporting on Department of the Interior $982 million payment to Equinor for offshore wind lease cancellation. <a href="#r27">&#8617;</a></li>
+      <li id="fn28">Bureau of Safety and Environmental Enforcement, Pacific Region OCS Platform Database, data.bsee.gov; California State Lands Commission, offshore platform inventory. <a href="#r28">&#8617;</a></li>
+      <li id="fn29">THUMS Long Beach Company / California Resources Corporation, Wilmington Oil Field operations history; California State Lands Commission, Long Beach Unit reports. <a href="#r29">&#8617;</a></li>
+      <li id="fn30">California Geologic Energy Management Division, 2024 Annual Report of the State Oil and Gas Supervisor, Midway-Sunset Field data; U.S. Energy Information Administration, "Top 100 Oil Fields" rankings. <a href="#r30">&#8617;</a></li>
+      <li id="fn31">CalGEM Oil and Gas Field Inventory, 2024; Bureau of Land Management, California state office leasing summaries. <a href="#r31">&#8617;</a></li>
+    </ol>
+    <a class="backtop" href="index.html#writing">&larr; Back to all writing</a>
+  </div>
+
+</div></article>
+
+<footer><div class="wrap">&copy; 2026 Delany Broome &middot; <a href="index.html">Back to the site</a></div></footer>
+
+</body>
+</html>

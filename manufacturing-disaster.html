@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manufacturing Disaster &middot; Delany Broome</title>
+
+<!-- Reading page. Full text of the working paper, hosted for the site.
+     Crosspost to Substack whenever you like. No dashes added in any chrome. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 60'%3E%3Cg fill='none' stroke='%2337462B' stroke-width='3'%3E%3Cpath d='M20 58 V8'/%3E%3Cpath d='M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z'/%3E%3Cpath d='M20 34c8 0 12-6 12-12-8 0-12 6-12 12z'/%3E%3C/g%3E%3Ccircle cx='20' cy='6' r='4' fill='%23EDBEE4'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  --paper:#F6F1E7;--haze:#EFE7EE;--cream:#F3D0C3;--ink:#33402A;--forest:#37462B;--olive:#5F5420;
+  --sage:#AEA181;--terra:#EA785B;--terra-deep:#A84F3D;--lilac:#EDBEE4;--plum:#5A384B;--grape:#3F0013;
+  --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;
+}
+header.art h1,article h2,article h3{font-variation-settings:"opsz" 144}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.75;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:720px;margin:0 auto;padding:0 28px}
+a{color:var(--terra-deep)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,70,43,.12)}
+nav .nwrap{max-width:720px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-family:var(--display);font-size:1.2rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.brand .dot{color:var(--terra)}
+.back{font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink)}.back:hover{color:var(--terra-deep)}
+
+header.art{padding:68px 0 40px}
+.kicker{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep);display:block;margin-bottom:18px}
+header.art h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,7vw,4.2rem);color:var(--forest);line-height:1;letter-spacing:-.02em}
+header.art .sub{font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,3vw,1.6rem);color:var(--plum);margin-top:16px;line-height:1.25}
+.byline{margin-top:26px;font-size:.9rem;opacity:.8;border-top:1px solid rgba(55,70,43,.25);border-bottom:1px solid rgba(55,70,43,.25);padding:16px 0}
+.byline strong{color:var(--forest)}
+
+.abstract{background:var(--haze);border-radius:16px;padding:26px 30px;margin:30px 0 10px;font-size:.98rem}
+.abstract .lbl{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--terra-deep);display:block;margin-bottom:10px}
+.keywords{font-size:.86rem;opacity:.8;margin:14px 0 0}
+
+article{padding:24px 0 60px;font-size:1.08rem}
+article h2{font-family:var(--display);font-weight:500;font-size:1.7rem;color:var(--forest);margin:48px 0 14px;line-height:1.1}
+article h3{font-family:var(--display);font-weight:500;font-size:1.25rem;color:var(--olive);margin:32px 0 10px}
+article p{margin:0 0 20px}
+sup a{color:var(--terra-deep);text-decoration:none;font-weight:600;font-size:.7em;padding:0 1px}
+sup a:hover{text-decoration:underline}
+
+.notes{border-top:2px solid var(--forest);margin-top:54px;padding-top:30px}
+.notes h2{margin-top:0}
+.notes ol,.refs{font-size:.84rem;line-height:1.6;color:var(--ink);opacity:.85}
+.notes ol{padding-left:22px}
+.notes li{margin-bottom:10px}
+.refs p{margin:0 0 12px;padding-left:24px;text-indent:-24px}
+.backtop{display:inline-block;margin-top:36px;font-size:.85rem;font-weight:600;text-decoration:none;color:var(--terra-deep)}
+
+footer{background:var(--grape);color:var(--cream);padding:40px 0;text-align:center;font-size:.85rem;margin-top:60px}
+footer a{color:var(--terra);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav><div class="nwrap">
+  <a class="brand" href="index.html">Delany Broome<span class="dot">.</span></a>
+  <a class="back" href="index.html#writing">&larr; All writing</a>
+</div></nav>
+
+<header class="art"><div class="wrap">
+  <span class="kicker">Working paper &middot; 2026</span>
+  <h1>Manufacturing Disaster</h1>
+  <div class="sub">The political ecology of organized catastrophe</div>
+  <div class="byline"><strong>By Delany Broome</strong></div>
+
+  <div class="abstract">
+    <span class="lbl">Abstract</span>
+    This article examines the coordinated dismantling of three federal disaster response programs in 2025: the Building Resilient Infrastructure and Communities program, the Oil Spill Liability Trust Fund financing rate, and the National Oceanic and Atmospheric Administration's scientific response capacity. Each action traces to a specific proposal in the Heritage Foundation's Project 2025 "Mandate for Leadership" (2023). This paper argues that these actions constitute an updated form of the disaster capitalism strategy described by Klein (2007). Rather than exploiting crises that arrive externally, the contemporary administration is engineering the conditions under which the next major Gulf oil disaster will produce a casualty event the federal government will be unable to address. The argument is developed through a case study of Plaquemines Parish, Louisiana, where an 83-year-old inactive oil well ruptured in April 2025. The article contributes to political ecology scholarship by theorizing the deliberate production of protective-capacity vacuums as a distinct mode of governance.
+    <p class="keywords"><strong>Keywords:</strong> disaster capitalism; political ecology; organized abandonment; oil spill response; Project 2025; Plaquemines Parish</p>
+  </div>
+</div></header>
+
+<article><div class="wrap">
+
+  <h2>1. Introduction</h2>
+  <p>On April 26, 2025, an 83-year-old oil and gas well ruptured in the wetlands of Plaquemines Parish, Louisiana, inside the Pass-A-Loutre Wildlife Management Area. The well, designated Well #59 by current operator Spectrum OpCo LLC, had been listed as inactive more than a decade earlier by a previous owner and was never permanently plugged. NOAA's Office of Response and Restoration deployed a Scientific Support Coordinator on April 28. The Coast Guard set 15,000 feet of containment boom. The wellhead was secured on May 4. The event received almost no national media coverage.</p>
+  <p>The absence of coverage marks the success of a response architecture that has operated, with bipartisan support, since the Oil Pollution Act of 1990 (Pub. L. 101-380), enacted following the Exxon Valdez disaster. OPA 90 established the National Contingency Plan, the Scientific Support Coordinator program, and the Oil Spill Liability Trust Fund financed through a per-barrel tax on crude oil (26 U.S.C. &sect; 4611). The architecture has responded to approximately 11,000 reported spills per year for 35 years.</p>
+  <p>In 2025, that architecture has been dismantled. Across coordinated decisions, the executive branch has terminated FEMA's pre-disaster mitigation grant program, allowed the OSLTF tax to expire by statute, and proposed eliminating NOAA's Office of Oceanic and Atmospheric Research. Each action traces to a specific proposal in the Heritage Foundation's Project 2025 "Mandate for Leadership" (2023).</p>
+  <p>This article argues that these actions constitute a coherent mode of governance that extends and updates the disaster capitalism strategy described by Naomi Klein in The Shock Doctrine (2007). Where Klein's original analysis focused on the post-hoc exploitation of crises, the 2025 actions exhibit a forward-looking logic: the deliberate production of conditions under which the next disaster will arrive larger, and the response will arrive smaller. The article situates this within political ecology scholarship on organized abandonment.<sup><a id="r1" href="#fn1">1</a></sup> The empirical case is developed through Plaquemines Parish, Louisiana, where the Garden Island Bay rupture illustrates what the dismantled response apparatus has been protecting against.</p>
+
+  <h2>2. From shock doctrine to manufactured disaster: a conceptual extension</h2>
+  <p>In the contemporary moment, the strategic actors do not wait for crises. They construct the conditions under which crises will occur. Klein introduced the concept of disaster capitalism to describe the strategic use of crises to push through political and economic policies that could not survive ordinary democratic scrutiny. The Friedman dictum she cites ("only a crisis, actual or perceived, produces real change") describes a posture of waiting: the policies are ready, the crisis supplies the opportunity. Klein's later work acknowledged that this posture has shifted.</p>
+  <p>Where original disaster capitalism exploited unplanned crises, conditions are emerging to produce them. Manufacturing disaster is the deliberate production of conditions guaranteed to amplify the next predictable catastrophe. Manufactured disaster operates on a longer temporal horizon than the shock doctrine. Its instruments include regulatory rollback, statutory sunsetting, personnel attrition, and the elimination of protective infrastructure. Its political appeal depends on the time lag between policy and consequence, which permits the administration responsible to disclaim the harm it has organized.</p>
+  <p>The April 2025 Garden Island Bay rupture will appear in the public record as an oil spill, not as the consequence of a regulatory regime that permitted the well's previous operator to walk away from it and externalize the decommissioning cost. A 2026 hurricane that strikes Plaquemines weakened by NOAA cuts, BRIC termination, and OSLTF expiration will appear as a hurricane, not as a casualty event the federal government chose to amplify. Naturalization is the second move of manufactured disaster, completing what the dismantling began. The deaths will be attributed to the storm, the leak, the geology, the unfortunate weather, the inevitability of life on a sinking delta. The administration that produced the conditions will not appear in the casualty narrative at all. The dismantling does the work while the naturalization does the cover.</p>
+
+  <h2>3. Organized abandonment: the 2025 dismantling of federal response</h2>
+  <p>Organized abandonment unfolded through three coordinated actions. Each dismantled a distinct layer of the federal disaster response architecture. Each traces to a specific proposal in Project 2025.</p>
+
+  <h3>3.1 NOAA defunding</h3>
+  <p>The Project 2025 Mandate for Leadership, Chapter 21 (Department of Commerce), proposed that NOAA be "broken up and downsized" and identified its Office of Oceanic and Atmospheric Research for elimination, describing NOAA as "one of the main drivers of the climate change alarm industry" (Heritage Foundation 2023, 663 to 694). Implementation began in early 2025 when the Office of Personnel Management terminated approximately 880 NOAA employees on February 27, 2025 (PBS NewsHour 2025). The FY26 budget request, released in May 2025, proposed a $1.7 billion cut to NOAA (a 27 percent reduction), elimination of the Office of Oceanic and Atmospheric Research as a line office, termination of all NOAA climate research laboratories and Cooperative Institutes, and elimination of 2,317 positions (CRS 2026a). The FY27 request proposed an additional 26 percent reduction (Inside Climate News 2026). Although Congress rejected the most extreme proposals, the administration has continued implementing cuts through administrative action (Voosen 2025).</p>
+  <p>The Scientific Support Coordinator program has not been formally eliminated, but its supporting infrastructure has been hollowed out: the FY2027 proposal cuts the National Ocean Service by approximately half and shutters the National Centers for Coastal Ocean Science, which supplies the water-sampling and chemistry analysis that supports SSC deployments. Richard Spinrad, former NOAA Administrator and a NOAA scientist across nine administrations beginning with Reagan, has called the cuts unprecedented (PBS NewsHour 2025).</p>
+
+  <h3>3.2 The Oil Spill Liability Trust Fund tax lapse</h3>
+  <p>The OSLTF financing rate at 26 U.S.C. &sect; 4611 expired by operation of statute on December 31, 2025. The Internal Revenue Service confirmed the expiration in Announcement 26-02 (January 2026). The 119th Congress has introduced no legislation to extend or reinstate the tax (CRS 2025). The fund retains approximately $9.6 billion in unobligated balance, but its replenishment mechanism has stopped. The Deepwater Horizon disaster of 2010 alone exceeded $14 billion in claims through the OSLTF and the BP-administered Gulf Coast Claims Facility (Ramseur 2023).</p>
+  <p>The expiration occurred concurrently with the administration's proposal to open more than 1.27 billion acres of the Outer Continental Shelf to oil and gas leasing and a 35 percent reduction in the Bureau of Safety and Environmental Enforcement budget (PEER 2025). Post-incident reviews of both the Exxon Valdez and Deepwater Horizon disasters identified inadequate regulatory capacity as a contributing factor (National Commission 2011).</p>
+
+  <h3>3.3 BRIC termination and the federal court ruling</h3>
+  <p>FEMA terminated the Building Resilient Infrastructure and Communities program on April 4, 2025, and ordered the return to Treasury of $882 million in Infrastructure Investment and Jobs Act (Pub. L. 117-58) appropriations. On December 11, 2025, the U.S. District Court for the District of Massachusetts ruled the termination unlawful in Commonwealth of Massachusetts et al. v. FEMA. The court characterized the administration's action as "unlawful Executive encroachment on the prerogative of Congress" (Commonwealth of Massachusetts v. FEMA 2025). As of April 2026, the funding had not been restored, and the plaintiff states had filed a motion to enforce the December 2025 injunction (CRS 2026b). The Stafford Act program (42 U.S.C. &sect; 5121 et seq.) and the Disaster Recovery Reform Act of 2018 (Pub. L. 115-254, signed by President Trump) provide the underlying statutory authority that the executive branch has effectively repudiated.</p>
+
+  <h2>4. Plaquemines Parish, Louisiana</h2>
+  <p>Plaquemines Parish exists because of accumulated federal infrastructure: levees, dredging, response capacity, hurricane forecasting. That infrastructure is now being withdrawn. The conditions described above will not produce uniform effects across the Gulf Coast. The casualty distribution will follow geography, demography, and infrastructure. Plaquemines Parish, Louisiana, is the first place where each layer of manufactured disaster will converge.</p>
+  <p>Plaquemines Parish is a 75-mile ribbon of land that follows the Mississippi River from New Orleans south to the Gulf of Mexico. Its 2024 population was approximately 22,300, a decline of 14 percent from its pre-Katrina peak. The parish is 60 percent white, 21 percent Black, 10 percent Hispanic, and 4.6 percent Asian, with a Vietnamese American fishing community concentrated in Buras-Triumph. Median household income is $82,874 (U.S. Census Bureau 2024). Louisiana voted 60.2 percent for Donald Trump in 2024 (Louisiana Secretary of State 2024).</p>
+  <p>The parish has experienced direct or significant impact from every major Gulf hurricane since 1965 (NOAA NCEI 2024; CPRA 2023). It has lost more land to subsidence and sea-level rise in the 21st century than any other U.S. county (Couvillion et al. 2017). The southern third is functionally an archipelago of fishing camps and oilfield-service settlements connected by single-track roads or by boat. Plaquemines has been the site of more than 17,000 drilled wells, with hundreds currently active (LDNR 2024). The parish is one of two coastal clusters with the largest concentrations of orphaned wells in Louisiana; more than 1,600 wells were added to the state's orphaned list in 2025 alone (Hammer 2026). Releases anywhere in the Cancer Alley petrochemical corridor upstream eventually arrive at or near the parish. The same waters host the offshore drilling activity the November 2025 Department of the Interior Draft Proposed Program would expand, opening up to 1.27 billion acres of the Outer Continental Shelf to oil and gas leasing through 2031 (BOEM 2025). The parish is a politically conservative middle-class community whose vulnerability cannot be attributed to a political punishment frame. The communities most exposed to the consequences of manufactured disaster include those that voted for it.</p>
+
+  <h2>5. Discussion</h2>
+  <p>The current Trump administration is not waiting for the next Gulf hurricane or the next refinery release. It is actively constructing the conditions under which both will arrive. The OSLTF tax expiration does not save industry a material sum; it establishes that the public will absorb the next catastrophe. The dismantling of NOAA's research capacity does not produce immediate observable harm; it removes the scientific labor that would document harm when it occurs. The termination of BRIC does not delay mitigation projects in places where mitigation is most urgent; it ensures the mitigation will not happen at all. Each action operates on a temporal horizon longer than the visible news cycle and shorter than the geological inevitability of the next major Gulf hurricane.</p>
+  <p>This is what the concept of manufactured disaster names: the engineered amplification of a catastrophe whose general arrival is forecast but whose specific timing remains undetermined. The political utility of the strategy is that the responsible administration will, in most cases, no longer be in office when the casualty count is tallied. Manufactured disaster represents a specific intensification within organized abandonment, characterized by deliberate speed in withdrawal and slow restoration on the recovery side.</p>
+  <p>The Plaquemines case also presents a complication to the dominant framing within environmental justice scholarship. Capital externalizes catastrophe costs regardless of the political affiliation of those who absorb them. The lower Plaquemines settlements will not be spared the next hurricane on the grounds that the parish voted correctly in 2024. The analytical scaffolding political ecology has developed for analyzing exposure (race, class, region, indigeneity) needs to be supplemented with a vocabulary for the universalization of harm that follows from the dismantling of protective infrastructure. The Vietnamese American shrimpers of Buras-Triumph, the Cajun-French elderly residents of Cameron Parish, and the white retirees of Aransas County, Texas, do not appear together in existing political coalitions. They are now exposed to the same federal-capacity vacuum. The political work the field of practice will require is the building of a coalition that crosses these lines.</p>
+  <p>The case also points toward a methodological direction for political ecology that the discipline has not always pursued systematically. Political ecology has often, with good reason, focused on the dynamics of capital and the dispossessions it produces in particular places. The operational machinery through which protective capacity is exercised or withdrawn (statutory text, regulatory codes, agency-level personnel rosters, budget tables, and judicial interpretations) has received less sustained attention. The Project 2025 actions have produced an unusually rich documentary record. Project 2025 was published openly. The executive orders are public. The litigation has generated detailed factual records under oath. The opportunity for grounded political-ecological analysis is correspondingly available. The case made here is not a call for political ecology to become administrative law. It is a call for the field to attend to the specific instruments through which capital externalization of catastrophe is currently being performed.</p>
+
+  <h2>6. Conclusion</h2>
+  <p>Scientific response capacity has been built over decades and was lost in months. The federal oil spill response apparatus took 35 years to develop from the foundation of OPA 90 to its 2024 form. The expertise embedded in NOAA's Office of Response and Restoration, the Scientific Support Coordinator corps, the National Centers for Coastal Ocean Science, and the National Weather Service forecast offices represents the accumulated work of careers. Once dispersed, this expertise does not reassemble on demand.</p>
+  <p>The April 2025 rupture of an inactive well in Plaquemines Parish, Louisiana was contained within nine days through the coordinated deployment of the Coast Guard, the Louisiana Oil Spill Coordinator's Office, and NOAA scientific staff (NOAA OR&amp;R 2025). The infrastructure for that response was, in April 2025, still substantially intact. Each protective layer that contained the April rupture has now been dismantled, weakened, or allowed to expire. The 2026 Atlantic hurricane season begins on June 1. The Colorado State University outlook predicted above-normal activity (Klotzbach et al. 2026). The NOAA Climate Prediction Center seasonal outlook has not been released in part because the forecast capacity that produces it has been reduced or eliminated. Under current changing climate conditions, the next event will likely not be small, the architecture will not be standing, and the public, rather than the Responsible Party, will absorb a larger cost. The decision to produce this outcome was made by the administration in 2025, preceding any disaster yet knowing one will eventually arrive. The casualties will be counted later, by someone else, and attributed to a storm.</p>
+
+  <div class="notes">
+    <h2>Notes</h2>
+    <ol>
+      <li id="fn1">Ruth Wilson Gilmore developed the concept of organized abandonment to analyze California's prison expansion. The expansion included surplus capital, surplus land, surplus labor, and surplus state capacity all converged to produce mass incarceration as a solution to the crises of late 20th-century capitalism. The framework names the systematic removal of public infrastructure from places and populations whose political power is weakest. The withdrawal is presented as fiscal necessity. The exposure of communities to premature death is naturalized. The concept extends to coastal, fenceline, and disaster-prone regions where the withdrawal of federal response capacity manufactures measurable mortality. <a href="#r1">&#8617;</a></li>
+    </ol>
+
+    <h2>References</h2>
+    <div class="refs">
+      <p>Bureau of Ocean Energy Management (BOEM). 2025. 2026-2031 National Outer Continental Shelf Oil and Gas Leasing Program: Draft Proposed Program. U.S. Department of the Interior. November.</p>
+      <p>Commonwealth of Massachusetts et al. v. Federal Emergency Management Agency. 2025. Memorandum and order on summary judgment. U.S. District Court for the District of Massachusetts, December 11.</p>
+      <p>Congressional Research Service (CRS). 2025. The Oil Spill Liability Trust Fund tax: background and selected issues. CRS Report IF13049. Author: J.L. Ramseur.</p>
+      <p>Congressional Research Service (CRS). 2026a. National Oceanic and Atmospheric Administration (NOAA) FY2026 budget request and appropriations. CRS Report IF13024.</p>
+      <p>Congressional Research Service (CRS). 2026b. FEMA's Building Resilient Infrastructure and Communities (BRIC): recent developments. CRS Report IN12609.</p>
+      <p>Coastal Protection and Restoration Authority (CPRA). 2023. Louisiana's comprehensive master plan for a sustainable coast. Baton Rouge: Coastal Protection and Restoration Authority.</p>
+      <p>Couvillion, B.R., H. Beck, D. Schoolmaster, and M. Fischer. 2017. Land area change in coastal Louisiana 1932 to 2016. U.S. Geological Survey Scientific Investigations Map 3381.</p>
+      <p>Disaster Recovery Reform Act of 2018, Pub. L. 115-254.</p>
+      <p>Gilmore, R.W. 2007. Golden gulag: prisons, surplus, crisis, and opposition in globalizing California. Berkeley: University of California Press.</p>
+      <p>Hammer, D. 2026. Louisiana's abandoned oil wells hit record high of 6,500. NOLA.com / The Times-Picayune, April 5.</p>
+      <p>Heritage Foundation. 2023. Mandate for leadership: the conservative promise (Project 2025). Washington, DC: Heritage Foundation.</p>
+      <p>Infrastructure Investment and Jobs Act, Pub. L. 117-58 (2021).</p>
+      <p>Inside Climate News. 2026. NOAA defends cuts to research and climate monitoring at budget hearing. April 29.</p>
+      <p>Internal Revenue Service. 2026. Announcement 2026-2: Section 4611 Oil Spill Liability Trust Fund financing rate. January.</p>
+      <p>Klein, N. 2007. The shock doctrine: the rise of disaster capitalism. New York: Metropolitan Books.</p>
+      <p>Klein, N. 2017. No is not enough: resisting Trump's shock politics and winning the world we need. Chicago: Haymarket.</p>
+      <p>Klein, N. 2018. The battle for paradise: Puerto Rico takes on the disaster capitalists. Chicago: Haymarket.</p>
+      <p>Klotzbach, P.J., M.M. Bell, and J.M. Eastin. 2026. Forecast of Atlantic seasonal hurricane activity for 2026. Department of Atmospheric Science, Colorado State University. April 3.</p>
+      <p>Louisiana Department of Natural Resources (LDNR). 2024. Strategic Online Natural Resources Information System (SONRIS): orphaned well database. Louisiana Department of Energy and Natural Resources.</p>
+      <p>Louisiana Secretary of State. 2024. Election results: 2024 presidential election.</p>
+      <p>National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling. 2011. Deep water: the Gulf oil disaster and the future of offshore drilling. Final report. Washington, DC.</p>
+      <p>National Oceanic and Atmospheric Administration National Centers for Environmental Information (NOAA NCEI). 2024. Storm events database.</p>
+      <p>National Oceanic and Atmospheric Administration Office of Response and Restoration (NOAA OR&amp;R). 2025. NOAA response teams provide scientific support to well rupture off Louisiana coast. Press release, June 11.</p>
+      <p>Oil Pollution Act of 1990, Pub. L. 101-380 (codified at 33 U.S.C. &sect;&sect; 2701-2762).</p>
+      <p>PBS NewsHour. 2025. As NOAA shrinks under Trump's cuts, employees speak out. April 16.</p>
+      <p>Public Employees for Environmental Responsibility (PEER). 2025. Trump and Congress just gifted Big Oil a multimillion dollar stocking stuffer. December.</p>
+      <p>Ramseur, J.L. 2023. Oil spills: background and governance. Congressional Research Service Report RL33705.</p>
+      <p>Robert T. Stafford Disaster Relief and Emergency Assistance Act, 42 U.S.C. &sect; 5121 et seq.</p>
+      <p>U.S. Census Bureau. 2024. QuickFacts: Plaquemines Parish, Louisiana. American Community Survey 5-year estimates.</p>
+      <p>Voosen, P. 2025. Trump administration pushes ahead with NOAA climate and weather cuts. Science, August 25.</p>
+      <p>26 U.S.C. &sect; 4611. Imposition of tax.</p>
+    </div>
+    <a class="backtop" href="index.html#writing">&larr; Back to all writing</a>
+  </div>
+
+</div></article>
+
+<footer><div class="wrap">&copy; 2026 Delany Broome &middot; <a href="index.html">Back to the site</a></div></footer>
+
+</body>
+</html>

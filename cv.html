@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delany Broome &middot; CV</title>
+
+<!--
+  CV PAGE. Lives alongside index.html in the same repo.
+  DOWNLOAD PDF: the button points to Broome_Resume.pdf. Drop that file in the
+  same folder (or change the href) and it works. Voice rule honored: no dashes.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 60'%3E%3Cg fill='none' stroke='%2337462B' stroke-width='3'%3E%3Cpath d='M20 58 V8'/%3E%3Cpath d='M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z'/%3E%3Cpath d='M20 34c8 0 12-6 12-12-8 0-12 6-12 12z'/%3E%3C/g%3E%3Ccircle cx='20' cy='6' r='4' fill='%23EDBEE4'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  --paper:#F6F1E7;--haze:#EFE7EE;--cream:#F3D0C3;--ink:#33402A;--forest:#37462B;--olive:#5F5420;
+  --sage:#AEA181;--terra:#EA785B;--terra-deep:#A84F3D;--lilac:#EDBEE4;--bluebell:#A1A8BE;
+  --plum:#5A384B;--grape:#3F0013;
+  --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;--maxw:1080px;
+}
+header h1,h2.sec,.job .title{font-variation-settings:"opsz" 144}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+a{color:var(--terra-deep)}
+.kicker{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep)}
+
+/* top bar */
+nav{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,70,43,.12)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--display);font-size:1.25rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.brand .dot{color:var(--terra)}
+.back{font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.back:hover{color:var(--terra-deep)}
+
+/* header */
+header.cvhead{padding:64px 0 36px;border-bottom:2px solid var(--forest)}
+header .kicker{display:block;margin-bottom:14px}
+header h1{font-family:var(--display);font-size:clamp(2.8rem,8vw,5rem);font-weight:400;color:var(--forest);line-height:.95;letter-spacing:-.02em}
+.summary{max-width:62ch;margin-top:20px;font-size:1.08rem;opacity:.9}
+.meta-line{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.9rem;font-weight:500}
+.meta-line a{text-decoration:none}.meta-line a:hover{text-decoration:underline}
+.dl{display:inline-block;margin-top:24px;background:var(--terra-deep);color:var(--paper);text-decoration:none;
+  padding:12px 26px;border-radius:40px;font-weight:600;font-size:.9rem;transition:background .3s,transform .3s}
+.dl:hover{background:var(--grape);transform:translateY(-2px)}
+
+/* layout */
+.grid{display:grid;grid-template-columns:1fr 2.2fr;gap:56px;padding:54px 0 90px}
+@media(max-width:820px){.grid{grid-template-columns:1fr;gap:40px}}
+
+h2.sec{font-family:var(--display);font-size:1.7rem;font-weight:500;color:var(--forest);margin-bottom:18px}
+.rail h3{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);font-weight:700;margin:0 0 12px}
+.rail .block{margin-bottom:34px}
+.rail ul{list-style:none}
+.rail li{padding:6px 0;font-size:.94rem;border-bottom:1px solid rgba(55,70,43,.12)}
+.rail .tag{display:inline-block;background:var(--lilac);color:var(--grape);font-size:.78rem;font-weight:600;
+  padding:5px 11px;border-radius:20px;margin:0 6px 6px 0}
+
+/* experience */
+.job{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid rgba(55,70,43,.18)}
+.job:last-child{border-bottom:none}
+.job .jtop{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+.job .title{font-family:var(--display);font-size:1.4rem;color:var(--forest);line-height:1.12}
+.job .when{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-deep);font-weight:600;white-space:nowrap}
+.job .where{font-size:.92rem;font-weight:600;color:var(--olive);margin:4px 0 14px}
+.job ul{list-style:none}
+.job li{position:relative;padding:5px 0 5px 22px;font-size:.97rem;opacity:.9}
+.job li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--terra)}
+.highlights{background:var(--haze);border-radius:18px;padding:28px 30px;margin-bottom:40px}
+.highlights h2.sec{margin-bottom:14px}
+.highlights ul{list-style:none}
+.highlights li{padding:7px 0 7px 22px;position:relative;font-size:.98rem}
+.highlights li::before{content:"\2737";position:absolute;left:0;color:var(--terra-deep);font-size:.8rem;top:9px}
+
+footer{background:var(--grape);color:var(--cream);padding:40px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--terra);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Delany Broome<span class="dot">.</span></a>
+    <a class="back" href="index.html">&larr; Back to site</a>
+  </div>
+</nav>
+
+<header class="cvhead">
+  <div class="wrap">
+    <span class="kicker">Curriculum Vitae</span>
+    <h1>Delany Broome</h1>
+    <p class="summary">Senior environmental scientist with statewide coordination authority across oil spill response, water quality data, and emerging contaminant policy. Lead author of the 2026 State of California Oil Spill Contingency Plan. Completing an M.S. in Climate Change Solutions at UC Berkeley, with a capstone on market mechanisms for methane-reducing livestock technologies.</p>
+    <div class="meta-line">
+      <a href="mailto:delany_broome@berkeley.edu">delany_broome@berkeley.edu</a>
+      <a href="https://www.linkedin.com/in/delany-broome/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://substack.com/@delanybroome" target="_blank" rel="noopener">Substack</a>
+      <span>Bay Area, California</span>
+    </div>
+    <a class="dl" href="Broome_Resume.pdf" target="_blank" rel="noopener">Download PDF &darr;</a>
+  </div>
+</header>
+
+<div class="wrap grid">
+
+  <!-- LEFT RAIL -->
+  <aside class="rail">
+    <div class="block">
+      <h2 class="sec">Core strengths</h2>
+      <ul>
+        <li>Statewide program coordination</li>
+        <li>Multi-agency and tribal stakeholder leadership</li>
+        <li>Federal-state liaison (USCG, U.S. EPA)</li>
+        <li>Emergency response preparedness and planning</li>
+        <li>Emerging risk integration (renewable fuels, lithium-ion, offshore wind)</li>
+        <li>Environmental data management at scale</li>
+        <li>Cost-benefit and market mechanism analysis</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>Technical</h3>
+      <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Tableau</span>
+      <span class="tag">ArcMap / QGIS</span><span class="tag">GitHub Pages</span><span class="tag">HTML / CSS / JS</span>
+    </div>
+
+    <div class="block">
+      <h3>Education</h3>
+      <ul>
+        <li>M.S. Climate Change Solutions, UC Berkeley (2026)</li>
+        <li>Professional Certificate, Data Analytics, UC Davis (2023)</li>
+        <li>B.S. Chemistry, Arizona State University, The Honors College (2015)</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>Certifications</h3>
+      <ul>
+        <li>NIMS ICS 100, 200, 300, 400, 700, 800</li>
+        <li>SEMS</li>
+        <li>48-Hour HAZWOPER</li>
+        <li>EROS (Environmental Response to Oil Spills)</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>Service</h3>
+      <ul>
+        <li>AmeriCorps, City Year Boston (2016 to 2017). 1,000 plus hours of academic and behavioral intervention with fifth-grade students.</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="highlights">
+      <h2 class="sec">Highlights</h2>
+      <ul>
+        <li>Lead author, 2026 State of California Oil Spill Contingency Plan, coordinating 110 plus federal, state, tribal, and industry partners.</li>
+        <li>California's Area Committee Chair Representative to U.S. EPA Region IX for Coastal Area Contingency Plan oversight under the Clean Water Act and OPA 90.</li>
+        <li>Led integration of renewable fuel preparedness into California's spill response doctrine.</li>
+        <li>Built Python, SQL, and Tableau ETL tools delivering a 30 percent reduction in data processing time across the CEDEN database.</li>
+      </ul>
+    </div>
+
+    <h2 class="sec">Professional experience</h2>
+
+    <div class="job">
+      <div class="jtop">
+        <div class="title">ACP Coordinator, Marine Oil Spill Response Planning and Preparedness</div>
+        <div class="when">Jul 2024 to Aug 2025</div>
+      </div>
+      <div class="where">California Office of Spill Prevention and Response (OSPR), Sacramento, CA</div>
+      <ul>
+        <li>Lead author of the forthcoming 2026 State of California Oil Spill Contingency Plan; coordinated the five-year statewide update across 110 plus federal, state, tribal, and industry partners, integrating renewable fuels, lithium-ion battery response, offshore wind, and culturally sensitive site protections.</li>
+        <li>Designated California's Area Committee Chair Representative to the U.S. EPA Region IX Area Committee; statewide oversight of six Coastal Area Contingency Plans under Clean Water Act and OPA 90 mandates.</li>
+        <li>Principal state liaison to the U.S. Coast Guard, federally and non-federally recognized California tribes, and federal partner agencies; coordinated internationally through the Pacific States and British Columbia Oil Spill Task Force and the California-Mexico MEXUS Joint Response Team.</li>
+        <li>Directed technical reviews of industry contingency plans and worst-case discharge trajectory analyses; authored spill preparedness standards adopted at the regional level.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jtop">
+        <div class="title">Statewide Chemistry Data Manager</div>
+        <div class="when">Jun 2019 to Jul 2024</div>
+      </div>
+      <div class="where">California State Water Resources Control Board, Sacramento, CA</div>
+      <ul>
+        <li>Statewide Data Manager for chemistry, field, and time-series data across California's Surface Water Ambient Monitoring Program (SWAMP); concurrent Interim Bacteria Data Manager.</li>
+        <li>Built Python, SQL, and Tableau ETL tools for the CEDEN database backend, reducing data processing time by 30 percent and improving QA/QC transparency.</li>
+        <li>Liaison across Regional and State Water Board programs (Regions 4, 7, 8, MPSL, SCCWRP); served as technical resource and coordinator for chemical laboratory services.</li>
+        <li>Advised regional boards on sampling methodology, quality assurance, and monitoring designs for contaminants of emerging concern, including microplastics, harmful algal blooms, and trash pollutants; developed SOPs and QC methods for these contaminants.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jtop">
+        <div class="title">Scientific Aid</div>
+        <div class="when">Feb 2017 to Jun 2019</div>
+      </div>
+      <div class="where">California Central Valley Water Resources Control Board, Rancho Cordova, CA</div>
+      <ul>
+        <li>Deployed for post-fire water quality response following the 2018 Camp Fire; recognized as Employee of the Month for response performance.</li>
+        <li>Conducted bacterial analysis, TMDL sampling, and data management for SWAMP and Mercury TMDL programs.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jtop">
+        <div class="title">Lab Assistant Technician</div>
+        <div class="when">Jan 2013 to Feb 2016</div>
+      </div>
+      <div class="where">Salt River Project Environmental Quality Lab, Phoenix, AZ</div>
+      <ul>
+        <li>Performed drinking, ground, and surface water quality, soil, and hazardous materials analysis for Arizona's primary public utilities facility (metal and mercury digestions, alkalinity, pH, conductivity, turbidity, TSS, TDS, TCLP, oil and grease).</li>
+        <li>EPA standard methods: SM 120.1, 130.1, 150.2, 180.1, 310.2, 200.7/200.8, 245.1, 1664A/1664B, 1684, 1311; EM 1603.</li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">&copy; 2026 Delany Broome &middot; <a href="index.html">Back to the site</a></div>
+</footer>
+
+</body>
+</html>
