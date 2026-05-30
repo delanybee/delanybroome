@@ -38,6 +38,7 @@
   --terra:#EA785B;        /* terra cotta accent */
   --terra-deep:#A84F3D;   /* wilted brown */
   --lilac:#EDBEE4;
+  --lilac-soft:#E3CDDD;
   --bluebell:#A1A8BE;
   --plum:#5A384B;         /* dulcet violet */
   --grape:#3F0013;        /* deep maroon */
@@ -114,7 +115,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* ===================== HERO ===================== */
 .hero{padding:60px 0 0}
-.hero .kicker{display:block;margin-bottom:18px}
+.hero .kicker{display:block}
 .heroframe{
   position:relative;
   border-radius:280px 280px 24px 24px;
@@ -160,8 +161,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* ===================== MARQUEE ===================== */
 .marquee{
-  margin:64px 0 0;background:var(--lilac);
-  border-top:1.5px solid var(--forest);border-bottom:1.5px solid var(--forest);
+  margin:64px 0 0;background:var(--lilac-soft);
+  border-top:1px solid var(--forest);border-bottom:1px solid var(--forest);
   overflow:hidden;white-space:nowrap;
 }
 .marquee .track{
@@ -169,10 +170,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   animation:slide 26s linear infinite;
 }
 .marquee span{
-  font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--forest);
+  font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--plum);
   padding:0 6px;
 }
-.marquee .star{color:var(--terra-deep);font-style:normal}
+.marquee .sprig-div{width:15px;height:21px;vertical-align:middle;margin:0 16px;display:inline-block}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ===================== SECTION SHELL ===================== */
@@ -364,7 +365,6 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== HERO ===================== -->
 <header class="hero">
   <div class="wrap">
-    <span class="kicker">Climate Scientist &nbsp;&middot;&nbsp; Disaster Preparedness &nbsp;&middot;&nbsp; Bay Area</span>
     <div class="heroframe">
       <img src="assets/img/hero.jpg" alt="Delany Broome outdoors in the field" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
     </div>
@@ -372,12 +372,8 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
       <h1>Delany Broome</h1>
     </div>
     <div class="herosub">
+      <span class="kicker">Climate Scientist &nbsp;&middot;&nbsp; Disaster Preparedness &nbsp;&middot;&nbsp; Bay Area</span>
       <span class="line">Climate scientist working on how California prepares for disaster.</span>
-      <p>Water chemistry, pollution response, and the data systems behind environmental decisions. A planter of gardens and a believer in tomorrow.</p>
-      <svg class="sprig" viewBox="0 0 40 60" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/>
-        <path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4"/>
-      </svg>
     </div>
   </div>
 </header>
@@ -385,16 +381,16 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== MARQUEE ===================== -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>water chemistry</span><span class="star">&#10047;</span>
-    <span>pollution response</span><span class="star">&#10047;</span>
-    <span>climate data</span><span class="star">&#10047;</span>
-    <span>environmental justice</span><span class="star">&#10047;</span>
-    <span>and a garden</span><span class="star">&#10047;</span>
-    <span>water chemistry</span><span class="star">&#10047;</span>
-    <span>pollution response</span><span class="star">&#10047;</span>
-    <span>climate data</span><span class="star">&#10047;</span>
-    <span>environmental justice</span><span class="star">&#10047;</span>
-    <span>and a garden</span><span class="star">&#10047;</span>
+    <span>water chemistry</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>pollution response</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>climate data</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>environmental justice</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>and a garden</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>water chemistry</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>pollution response</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>climate data</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>environmental justice</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
+    <span>and a garden</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
   </div>
 </div>
 
@@ -403,14 +399,11 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
   <div class="wrap inner">
     <div class="reveal">
       <h2>The <em>throughline</em></h2>
-      <p>Chemistry, then water data, then statewide spill response, now climate. The constant is making environmental risk legible: assembling the record, testing the assumptions, and showing the part that usually stays out of view.</p>
+      <p>Water chemistry, pollution response, and the data systems behind environmental decisions. A planter of gardens and a believer in tomorrow.</p>
       <p style="margin-top:18px"><a href="about.html" style="color:var(--terra-deep);font-weight:600;text-decoration:none">More about me &rarr;</a></p>
     </div>
     <div class="reveal">
-      <!-- FEATURE PHOTO: replace with <img class="flowerimg" src="..."> -->
-      <div class="flowerimg" role="img" aria-label="feature photograph placeholder">
-        <span class="ph-label">a photo you love</span>
-      </div>
+      <div class="flowerimg" role="img" aria-label="Glacier ice, layered and textured." style="background-image:url(assets/img/glacier.jpg);background-size:cover;background-position:center"></div>
     </div>
   </div>
 </section>
