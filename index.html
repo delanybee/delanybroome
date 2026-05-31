@@ -159,28 +159,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .herosub p{max-width:540px;color:var(--ink);opacity:.85;font-size:1.02rem}
 .sprig{display:block;margin:34px auto 0;width:30px;opacity:.6}
 
-/* ===================== MARQUEE ===================== */
-.marquee{
-  margin:64px 0 0;background:var(--lilac-soft);
-  border-top:1px solid var(--forest);border-bottom:1px solid var(--forest);
-  overflow:hidden;white-space:nowrap;
-}
-.marquee .track{
-  display:inline-block;padding:14px 0;
-  animation:slide 26s linear infinite;
-}
-.marquee span{
-  font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--plum);
-  padding:0 6px;
-}
-.marquee .sprig-div{width:15px;height:21px;vertical-align:middle;margin:0 16px;display:inline-block}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 /* ===================== SECTION SHELL ===================== */
 section{padding:120px 0}
-.sechead{display:block;margin-bottom:24px}
-.sechead .kicker{display:block;margin-bottom:10px}
-.sechead h2{font-size:clamp(2.4rem,6vw,4.4rem);color:var(--forest)}
+.sechead{display:block;margin-bottom:24px;border-left:2px solid var(--lilac);padding-left:22px}
+.sechead .eyebrow{font-family:var(--body);font-weight:600;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:8px;display:block}
+.sechead h2{font-size:clamp(2.6rem,6vw,4.4rem);color:var(--forest);line-height:1}
 .lede{max-width:620px;font-size:1.08rem;color:var(--ink);opacity:.85;margin-bottom:48px}
 .sec-intro{display:grid;grid-template-columns:1fr 2fr;gap:24px 48px;align-items:start;margin-bottom:48px}
 .sec-intro .sechead{margin-bottom:0}
@@ -353,7 +336,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
     <span class="brand">Delany Broome<span class="dot">.</span></span>
     <div class="navlinks">
       <a href="about.html">About</a>
-      <a href="#work">Work</a>
+      <a href="#work">Projects</a>
       <a href="#notes">Field Notes</a>
       <a href="#photos">Photographs</a>
       <a href="cv.html">CV</a>
@@ -366,7 +349,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <header class="hero">
   <div class="wrap">
     <div class="heroframe">
-      <img src="assets/img/hero.jpg" alt="Delany Broome outdoors in the field" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+      <img src="assets/img/dusk.jpg" alt="Pink dusk over the ocean from a coastal bluff." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;z-index:0">
     </div>
     <div class="heronames">
       <h1>Delany Broome</h1>
@@ -377,22 +360,6 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
     </div>
   </div>
 </header>
-
-<!-- ===================== MARQUEE ===================== -->
-<div class="marquee" aria-hidden="true">
-  <div class="track">
-    <span>water chemistry</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>pollution response</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>climate data</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>environmental justice</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>and a garden</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>water chemistry</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>pollution response</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>climate data</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>environmental justice</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-    <span>and a garden</span><span class="sprig-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60" fill="none" stroke="var(--plum)" stroke-width="3"><path d="M20 58 V8"/><path d="M20 24c-8 0-12-6-12-12 8 0 12 6 12 12z"/><path d="M20 34c8 0 12-6 12-12-8 0-12 6-12 12z"/><circle cx="20" cy="6" r="4" fill="var(--plum)" stroke="none"/></svg></span>
-  </div>
-</div>
 
 <!-- ===================== THE BRAID ===================== -->
 <section class="braid">
@@ -412,7 +379,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <section id="work">
   <div class="wrap">
     <div class="sec-intro">
-      <div class="sechead reveal"><span class="kicker">Selected</span><h2>Work</h2></div>
+      <div class="sechead reveal"><span class="eyebrow">what I've built</span><h2>Projects</h2></div>
       <p class="lede reveal">Plans, models, and tools for the parts of climate work that decide who gets protected and who pays.</p>
     </div>
     <div class="worklist">
@@ -441,7 +408,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== FIELD NOTES ===================== -->
 <section id="notes" class="writing">
   <div class="wrap">
-    <div class="sechead reveal"><span class="kicker">Writing, in print and online</span><h2>Field <em>Notes</em></h2></div>
+    <div class="sechead reveal"><span class="eyebrow">what I've written</span><h2>Field <em>Notes</em></h2></div>
     <p class="lede reveal">Essays and shorter pieces on climate, oil, and the systems that respond to disaster.</p>
     <div class="writelist">
       <a class="writerow reveal" href="manufacturing-disaster.html">
@@ -471,7 +438,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== TRACK RECORD ===================== -->
 <section class="track-rec">
   <div class="wrap">
-    <div class="sechead reveal"><span class="kicker">The professional half</span><h2>Track <em>record</em></h2></div>
+    <div class="sechead reveal"><span class="eyebrow">where I've worked</span><h2>Track <em>record</em></h2></div>
     <p class="lede reveal" style="color:var(--forest);opacity:.85">Eight years inside California's environmental agencies, from the lab bench to statewide coordination.</p>
     <div class="timeline">
       <div class="trow reveal">
@@ -504,7 +471,7 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <!-- ===================== PHOTOGRAPHS ===================== -->
 <section id="photos">
   <div class="wrap">
-    <div class="sechead reveal"><span class="kicker">The eye</span><h2>Photographs</h2></div>
+    <div class="sechead reveal"><span class="eyebrow">what I've seen</span><h2>Photographs</h2></div>
     <p class="lede reveal">Shot on my own camera. Grouped by where I happened to be standing.</p>
     <div class="gallery">
       <div class="gphoto g1 reveal"><img src="assets/img/glacier.jpg" alt="Glacier landscape, Central Valley backcountry" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
