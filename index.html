@@ -246,7 +246,8 @@ section{padding:120px 0}
 .gphoto::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to top, rgba(45,55,35,.5), transparent 55%)}
 .gphoto:hover{transform:scale(1.015)}
-.gphoto .cap{font-family:var(--display);font-style:italic;font-size:1.25rem;z-index:2;position:relative;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.gphoto .cap{font-family:var(--display);font-style:italic;font-size:1.25rem;z-index:2;position:relative;text-shadow:0 1px 12px rgba(0,0,0,.4);opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease}
+.gphoto:hover .cap{opacity:1;transform:translateY(0)}
 .g1{background:linear-gradient(160deg,#9fb083,var(--forest))}
 .g2{background:linear-gradient(160deg,var(--lilac),var(--plum))}
 .g3{background:linear-gradient(160deg,#d98c72,var(--terra-deep))}
@@ -472,14 +473,14 @@ footer p{max-width:56ch;opacity:.82;font-size:1.05rem;margin-bottom:34px}
 <section id="photos">
   <div class="wrap">
     <div class="sechead reveal"><span class="eyebrow">what I've seen</span><h2>Photographs</h2></div>
-    <p class="lede reveal">Shot on my own camera. Grouped by where I happened to be standing.</p>
+    <p class="lede reveal">A study of light, water, and terrain. Shot on a Sony Alpha 6600.</p>
     <div class="gallery">
-      <div class="gphoto g1 reveal"><img src="assets/img/glacier.jpg" alt="Glacier landscape, Central Valley backcountry" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
-      <div class="gphoto g2 reveal"><img src="assets/img/harbor.jpg" alt="Harbor on the Bay" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
-      <div class="gphoto g3 reveal"><img src="assets/img/peacock.jpg" alt="Peacock, Copenhagen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
-      <div class="gphoto g4 reveal"><img src="assets/img/horse.jpg" alt="Horses in the field" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
-      <div class="gphoto g5 reveal"><img src="assets/img/church.jpg" alt="Church in the garden" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
-      <div class="gphoto g6 reveal"><img src="assets/img/headland.jpg" alt="California headland on the water" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></div>
+      <div class="gphoto g1 reveal"><img src="assets/img/glacier.jpg" alt="Glacier ice, layered and textured, Iceland." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0"><span class="cap">Iceland</span></div>
+      <div class="gphoto g2 reveal"><img src="assets/img/harbor.jpg" alt="Copenhagen harbour, a boat cutting through blue water." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;z-index:0"><span class="cap">Copenhagen</span></div>
+      <div class="gphoto g3 reveal"><img src="assets/img/peacock.jpg" alt="A peacock, up close, Copenhagen." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0"><span class="cap">Copenhagen</span></div>
+      <div class="gphoto g4 reveal"><img src="assets/img/horse.jpg" alt="Horses grazing on a green hillside, Iceland." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 75%;z-index:0"><span class="cap">Iceland</span></div>
+      <div class="gphoto g5 reveal"><img src="assets/img/church.jpg" alt="A turf church in a green valley, Iceland." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:0"><span class="cap">Iceland</span></div>
+      <div class="gphoto g6 reveal"><img src="assets/img/headland.jpg" alt="Figures silhouetted on a California headland at sunset." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0"><span class="cap">California coast</span></div>
     </div>
   </div>
 </section>
